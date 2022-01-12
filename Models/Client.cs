@@ -11,5 +11,6 @@ namespace wdpr_h.Models
         public String Achternaam { get; set; }
         public int HulpverlenerId { get; set; }
         public String Wachtwoord { get; set; }
+        public String Email {get;set;}
     }
 }
