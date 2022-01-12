@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WDPR_Project_H.Models;
+using wdpr_h.Models;
 
-namespace WDPR_Project_H.Controllers
+namespace wdpr_h.Controllers
 {
     public class HomeController : Controller
     {

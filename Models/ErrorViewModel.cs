@@ -1,6 +1,6 @@
 using System;
 
-namespace WDPR_Project_H.Models
+namespace wdpr_h.Models
 {
     public class ErrorViewModel
     {
