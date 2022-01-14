@@ -148,14 +148,14 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:ModeratorEmail"],
             };
 
-            //Hier wordt de moderator aangemaakt
+            //Hier wordt de hulpverlener aangemaakt
             var hulpverlener_user = new IdentityUser
             {
                 UserName = Configuration["AppSettings:HulpverlenerName"],
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
             };
 
-             //Hier wordt de Client aangemaakt
+             //Hier wordt de client aangemaakt
             var client_user = new IdentityUser
             {
                 UserName = Configuration["AppSettings:ClientName"],
