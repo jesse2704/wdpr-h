@@ -36,8 +36,6 @@ namespace wdpr_h
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-            services.AddRazorPages();
-
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("RequireAdministratorRole",
@@ -50,26 +48,27 @@ namespace wdpr_h
                     policy => policy.RequireRole("Client"));
 
             });
+
             services.Configure<IdentityOptions>(options =>
-            {
-                // Password settings.
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequiredLength = 6;
-                options.Password.RequiredUniqueChars = 1;
+    {
+        // Password settings.
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireNonAlphanumeric = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequiredLength = 6;
+        options.Password.RequiredUniqueChars = 1;
 
-                 // Lockout settings.
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Lockout.AllowedForNewUsers = true;
+        // Lockout settings.
+        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+        options.Lockout.MaxFailedAccessAttempts = 5;
+        options.Lockout.AllowedForNewUsers = true;
 
-                  // User settings.
-                options.User.AllowedUserNameCharacters =
-                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                options.User.RequireUniqueEmail = false;
-            });
+        // User settings.
+        options.User.AllowedUserNameCharacters =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+        options.User.RequireUniqueEmail = false;
+    });
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -113,7 +112,8 @@ namespace wdpr_h
                 endpoints.MapRazorPages();
             });
 
-            //CreateRoles(serviceProvider).Wait();
+            //  Maak custom rollen aan including een super user
+            //CreateRoles(serviceProvider).GetAwaiter().GetResult();
         }
 
         private async Task CreateRoles(IServiceProvider serviceProvider)
