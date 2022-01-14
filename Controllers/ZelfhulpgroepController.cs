@@ -10,22 +10,22 @@ using wdpr_h.Models;
 
 namespace wdpr_h.Controllers
 {
-    public class ClientController : Controller
+    public class ZelfhulpgroepController : Controller
     {
         private readonly MyContext _context;
 
-        public ClientController(MyContext context)
+        public ZelfhulpgroepController(MyContext context)
         {
             _context = context;
         }
 
-        // GET: Client
+        // GET: Zelfhulpgroep
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Client.ToListAsync());
+            return View(await _context.Zelfhulpgroep.ToListAsync());
         }
 
-        // GET: Client/Details/5
+        // GET: Zelfhulpgroep/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -33,41 +33,41 @@ namespace wdpr_h.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.User == id);
-            if (client == null)
+            var zelfhulpgroep = await _context.Zelfhulpgroep
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (zelfhulpgroep == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(zelfhulpgroep);
         }
 
-        // GET: Client/Create
+        // GET: Zelfhulpgroep/Create
         [Authorize(Roles = "Hulpverlener")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Client/Create
+        // POST: Zelfhulpgroep/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Create([Bind("Id,Titel,Onderwerp,LeeftijdsCategorie")] Zelfhulpgroep zelfhulpgroep)
         {
             if (ModelState.IsValid)
             {
-                client.User = Guid.NewGuid();
-                _context.Add(client);
+                zelfhulpgroep.Id = Guid.NewGuid();
+                _context.Add(zelfhulpgroep);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(zelfhulpgroep);
         }
 
-        // GET: Client/Edit/5
+        // GET: Zelfhulpgroep/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace wdpr_h.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client.FindAsync(id);
-            if (client == null)
+            var zelfhulpgroep = await _context.Zelfhulpgroep.FindAsync(id);
+            if (zelfhulpgroep == null)
             {
                 return NotFound();
             }
-            return View(client);
+            return View(zelfhulpgroep);
         }
 
-        // POST: Client/Edit/5
+        // POST: Zelfhulpgroep/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Titel,Onderwerp,LeeftijdsCategorie")] Zelfhulpgroep zelfhulpgroep)
         {
-            if (id != client.User)
+            if (id != zelfhulpgroep.Id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace wdpr_h.Controllers
             {
                 try
                 {
-                    _context.Update(client);
+                    _context.Update(zelfhulpgroep);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.User))
+                    if (!ZelfhulpgroepExists(zelfhulpgroep.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace wdpr_h.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(zelfhulpgroep);
         }
 
-        // GET: Client/Delete/5
+        // GET: Zelfhulpgroep/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace wdpr_h.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.User == id);
-            if (client == null)
+            var zelfhulpgroep = await _context.Zelfhulpgroep
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (zelfhulpgroep == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(zelfhulpgroep);
         }
 
-        // POST: Client/Delete/5
+        // POST: Zelfhulpgroep/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var client = await _context.Client.FindAsync(id);
-            _context.Client.Remove(client);
+            var zelfhulpgroep = await _context.Zelfhulpgroep.FindAsync(id);
+            _context.Zelfhulpgroep.Remove(zelfhulpgroep);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientExists(Guid id)
+        private bool ZelfhulpgroepExists(Guid id)
         {
-            return _context.Client.Any(e => e.User == id);
+            return _context.Zelfhulpgroep.Any(e => e.Id == id);
         }
     }
 }

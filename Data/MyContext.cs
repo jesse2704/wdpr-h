@@ -15,4 +15,6 @@ using wdpr_h.Models;
         public DbSet<wdpr_h.Models.Hulpverlener> Hulpverlener { get; set; }
 
         public DbSet<wdpr_h.Models.Client> Client { get; set; }
+
+        public DbSet<wdpr_h.Models.Zelfhulpgroep> Zelfhulpgroep { get; set; }
     }
