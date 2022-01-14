@@ -17,4 +17,6 @@ using wdpr_h.Models;
         public DbSet<wdpr_h.Models.Client> Client { get; set; }
 
         public DbSet<wdpr_h.Models.Zelfhulpgroep> Zelfhulpgroep { get; set; }
+
+        public DbSet<wdpr_h.Models.Moderator> Moderator { get; set; }
     }

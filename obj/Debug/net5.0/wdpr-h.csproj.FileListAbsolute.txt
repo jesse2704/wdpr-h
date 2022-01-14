@@ -183,3 +183,8 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Details.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Edit.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Index.cshtml.g.cs

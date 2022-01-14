@@ -15629,6 +15629,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Edit.cshtml",
+      "TargetPath": "Views\\Moderator\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Areas/Identity/Pages/Account/_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15674,6 +15679,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Index.cshtml",
+      "TargetPath": "Views\\Moderator\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Zelfhulpgroep/Delete.cshtml",
       "TargetPath": "Views\\Zelfhulpgroep\\Delete.cshtml",
       "FileKind": "mvc"
@@ -15686,6 +15696,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Details.cshtml",
+      "TargetPath": "Views\\Moderator\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15724,6 +15739,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Create.cshtml",
+      "TargetPath": "Views\\Moderator\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Zelfhulpgroep/Details.cshtml",
       "TargetPath": "Views\\Zelfhulpgroep\\Details.cshtml",
       "FileKind": "mvc"
@@ -15736,6 +15756,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Zelfhulpgroep/Edit.cshtml",
       "TargetPath": "Views\\Zelfhulpgroep\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Delete.cshtml",
+      "TargetPath": "Views\\Moderator\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],
