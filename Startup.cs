@@ -32,7 +32,7 @@ namespace wdpr_h
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -112,7 +112,7 @@ namespace wdpr_h
                 endpoints.MapRazorPages();
             });
 
-            //  Maak custom rollen aan including een super user
+            //Maak custom rollen aan including een super user
             //CreateRoles(serviceProvider).GetAwaiter().GetResult();
         }
 
@@ -137,13 +137,38 @@ namespace wdpr_h
             //Hier wordt de super user aangemaakt - Beheer user van de applicatie
             var poweruser = new IdentityUser
             {
-
                 UserName = Configuration["AppSettings:UserName"],
                 Email = Configuration["AppSettings:UserEmail"],
             };
+
+             //Hier wordt de moderator aangemaakt
+            var moderator_user = new IdentityUser
+            {
+                UserName = Configuration["AppSettings:ModeratorName"],
+                Email = Configuration["AppSettings:ModeratorEmail"],
+            };
+
+            //Hier wordt de hulpverlener aangemaakt
+            var hulpverlener_user = new IdentityUser
+            {
+                UserName = Configuration["AppSettings:HulpverlenerName"],
+                Email = Configuration["AppSettings:HulpverlenerEmail"],
+            };
+
+             //Hier wordt de client aangemaakt
+            var client_user = new IdentityUser
+            {
+                UserName = Configuration["AppSettings:ClientName"],
+                Email = Configuration["AppSettings:ClientEmail"],
+            };
+
             //Ensure you have these values in your appsettings.json file
             string userPWD = Configuration["AppSettings:UserPassword"];
+
             var _user = await UserManager.FindByEmailAsync(Configuration["AppSettings:AdminUserEmail"]);
+            var _moderator = await UserManager.FindByEmailAsync(Configuration["AppSettings:ModeratorEmail"]);
+            var _hulpverlener = await UserManager.FindByEmailAsync(Configuration["AppSettings:HulpverlenerEmail"]);
+            var _client = await UserManager.FindByEmailAsync(Configuration["AppSettings:ClientEmail"]);
 
             if (_user == null)
             {
@@ -152,6 +177,39 @@ namespace wdpr_h
                 {
                     //here we tie the new user to the role
                     await UserManager.AddToRoleAsync(poweruser, "Admin");
+
+                }
+            }
+
+            if (_moderator == null)
+            {
+                var createModeratorUser = await UserManager.CreateAsync(moderator_user, userPWD);
+                if (createModeratorUser.Succeeded)
+                {
+                    //here we tie the new user to the role
+                    await UserManager.AddToRoleAsync(moderator_user, "Moderator");
+
+                }
+            }
+
+            if (_hulpverlener == null)
+            {
+                var createHulpverlenerUser = await UserManager.CreateAsync(hulpverlener_user, userPWD);
+                if (createHulpverlenerUser.Succeeded)
+                {
+                    //here we tie the new user to the role
+                    await UserManager.AddToRoleAsync(hulpverlener_user, "Hulpverlener");
+
+                }
+            }
+
+            if (_client == null)
+            {
+                var createClientUser = await UserManager.CreateAsync(client_user, userPWD);
+                if (createClientUser.Succeeded)
+                {
+                    //here we tie the new user to the role
+                    await UserManager.AddToRoleAsync(client_user, "Client");
 
                 }
             }
