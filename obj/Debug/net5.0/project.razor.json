@@ -15634,13 +15634,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Details.cshtml",
+      "TargetPath": "Views\\Chatrestrictie\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Create.cshtml",
+      "TargetPath": "Views\\Chatrestrictie\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Areas/Identity/Pages/Account/_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Delete.cshtml",
+      "TargetPath": "Views\\Chatrestrictie\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Edit.cshtml",
+      "TargetPath": "Views\\Chatrestrictie\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15681,6 +15701,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Index.cshtml",
       "TargetPath": "Views\\Moderator\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Index.cshtml",
+      "TargetPath": "Views\\Chatrestrictie\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
