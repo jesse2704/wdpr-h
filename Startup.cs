@@ -32,7 +32,7 @@ namespace wdpr_h
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -194,8 +194,8 @@ namespace wdpr_h
 
             if (_hulpverlener == null)
             {
-                var createModeratorUser = await UserManager.CreateAsync(hulpverlener_user, userPWD);
-                if (createModeratorUser.Succeeded)
+                var createHulpverlenerUser = await UserManager.CreateAsync(hulpverlener_user, userPWD);
+                if (createHulpverlenerUser.Succeeded)
                 {
                     //here we tie the new user to the role
                     await UserManager.AddToRoleAsync(hulpverlener_user, "Hulpverlener");
@@ -205,8 +205,8 @@ namespace wdpr_h
 
             if (_client == null)
             {
-                var createModeratorUser = await UserManager.CreateAsync(client_user, userPWD);
-                if (createModeratorUser.Succeeded)
+                var createClientUser = await UserManager.CreateAsync(client_user, userPWD);
+                if (createClientUser.Succeeded)
                 {
                     //here we tie the new user to the role
                     await UserManager.AddToRoleAsync(client_user, "Client");
