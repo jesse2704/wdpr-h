@@ -18,7 +18,7 @@ namespace wdpr_h.Models
         [StringLength(35)]
         public String Specialisme {get; set;}
         [Required]
-        [StringLength(50)]
+        [StringLength(30)]
         public String Wachtwoord {get; set;}
     }
 }
