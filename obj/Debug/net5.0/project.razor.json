@@ -15654,6 +15654,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/Index.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/Edit.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
       "FileKind": "mvc"
@@ -15709,6 +15719,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/Create.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Zelfhulpgroep/Delete.cshtml",
       "TargetPath": "Views\\Zelfhulpgroep\\Delete.cshtml",
       "FileKind": "mvc"
@@ -15741,6 +15756,16 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Client/Index.cshtml",
       "TargetPath": "Views\\Client\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/Details.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/Delete.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

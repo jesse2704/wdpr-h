@@ -193,3 +193,8 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Details.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Edit.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Index.cshtml.g.cs

@@ -21,4 +21,6 @@ using wdpr_h.Models;
         public DbSet<wdpr_h.Models.Moderator> Moderator { get; set; }
 
         public DbSet<wdpr_h.Models.Chatrestrictie> Chatrestrictie { get; set; }
+
+        public DbSet<wdpr_h.Models.ClientZelfhulpgroep> ClientZelfhulpgroep { get; set; }
     }
