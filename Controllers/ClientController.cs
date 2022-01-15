@@ -53,7 +53,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Create([Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Email,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Edit(Guid id, [Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Email,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
         {
             if (id != client.User)
             {
