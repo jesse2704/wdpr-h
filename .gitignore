@@ -11,6 +11,9 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-.obj
-
-.bin
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
