@@ -57,6 +57,10 @@ namespace wdpr_h.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Check if user is > = 16
+                
+
+                
                 aanmeld.Id = Guid.NewGuid();
                 _context.Add(aanmeld);
                 await _context.SaveChangesAsync();

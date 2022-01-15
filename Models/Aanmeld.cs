@@ -14,7 +14,8 @@ namespace wdpr_h.Models
         [Required]
         [StringLength(25)]
         public String Achternaam {get;set;}
-        [Required]
+        [Required] 
+        [MinimumAge(18, ErrorMessage = "Je moet ouder of gelijk aan 16 zijn om zelf een account aan te maken!")]
         public DateTime Geboortedatum {get;set;}
         [Required]
         [StringLength(150)]
