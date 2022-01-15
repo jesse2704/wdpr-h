@@ -23,4 +23,6 @@ using wdpr_h.Models;
         public DbSet<wdpr_h.Models.ClientZelfhulpgroep> ClientZelfhulpgroep { get; set; }
 
         public DbSet<wdpr_h.Models.Client> Client { get; set; }
+
+        public DbSet<wdpr_h.Models.Aanmeld> Aanmeld { get; set; }
     }

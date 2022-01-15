@@ -19,6 +19,11 @@ namespace wdpr_h.Models
         [Required]
         [StringLength(150)]
         public String Aandoening {get;set;}
+        
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        public String Email {get;set;}
         public Boolean voorKind {get;set;}
         public Boolean heeftVerwijzing {get;set;}
     

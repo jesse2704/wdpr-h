@@ -15649,8 +15649,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Create.cshtml",
+      "TargetPath": "Views\\Aanmeld\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Delete.cshtml",
       "TargetPath": "Views\\Chatrestrictie\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Details.cshtml",
+      "TargetPath": "Views\\Aanmeld\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15671,6 +15681,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Edit.cshtml",
       "TargetPath": "Views\\Chatrestrictie\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Index.cshtml",
+      "TargetPath": "Views\\Aanmeld\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15749,6 +15764,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Edit.cshtml",
+      "TargetPath": "Views\\Aanmeld\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/Create.cshtml",
       "TargetPath": "Views\\Hulpverlener\\Create.cshtml",
       "FileKind": "mvc"
@@ -15791,6 +15811,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Create.cshtml",
       "TargetPath": "Views\\Moderator\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Delete.cshtml",
+      "TargetPath": "Views\\Aanmeld\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
