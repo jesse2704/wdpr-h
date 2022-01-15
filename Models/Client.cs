@@ -19,6 +19,8 @@ namespace wdpr_h.Models
         [Required]
         [StringLength(30)]
         public String Achternaam { get; set; }
+        public Boolean isKindAccount {get;set;}
+        public Guid OuderAccount {get;set;}
         [Required]
         public int HulpverlenerId { get; set; }
         [Required]

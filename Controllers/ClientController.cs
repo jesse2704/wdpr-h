@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +43,6 @@ namespace wdpr_h.Controllers
         }
 
         // GET: Client/Create
-        [Authorize(Roles = "Hulpverlener")]
         public IActionResult Create()
         {
             return View();
@@ -55,7 +53,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Create([Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +86,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,HulpverlenerId,Wachtwoord")] Client client)
+        public async Task<IActionResult> Edit(Guid id, [Bind("User,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord")] Client client)
         {
             if (id != client.User)
             {
