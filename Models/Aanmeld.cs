@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace wdpr_h.Models
@@ -15,7 +16,7 @@ namespace wdpr_h.Models
         [StringLength(25)]
         public String Achternaam {get;set;}
         [Required] 
-        [MinimumAge(18, ErrorMessage = "Je moet ouder of gelijk aan 16 zijn om zelf een account aan te maken!")]
+        [MinimumAge(16, ErrorMessage = "Je moet 16 jaar of ouder zijn om een account aan te maken!")]
         public DateTime Geboortedatum {get;set;}
         [Required]
         [StringLength(150)]
@@ -26,8 +27,11 @@ namespace wdpr_h.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public String Email {get;set;}
         [Required]
+        [Display(Name = "Hulpverlener")]
         public Guid hulpVerlenerId {get;set;}
+        [DisplayName("Account voor uw kind?")]
         public Boolean voorKind {get;set;}
+        [DisplayName("In bezit van een doorverwijzing?")]
         public Boolean heeftVerwijzing {get;set;}
     
     }
