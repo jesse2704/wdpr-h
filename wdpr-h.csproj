@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>aspnet-wdpr_h-88B661B9-6E1B-49B5-BA26-5273A78AA610</UserSecretsId>
+    <UserSecretsId>aspnet-wdpr_h-B755E932-5F6E-4516-8F83-D06E4DEDD68E</UserSecretsId>
     <RootNamespace>wdpr_h</RootNamespace>
   </PropertyGroup>
 
@@ -12,14 +12,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.sqlserver" Version="5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

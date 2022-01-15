@@ -23,8 +23,8 @@ namespace wdpr_h.Controllers
         {
             return View();
         }
-        
-        [Authorize]
+
+        [Authorize(Roles = "Client")]
         public IActionResult Privacy()
         {
             return View();

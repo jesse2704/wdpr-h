@@ -1,7 +1,10 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/appsettings.Development.json
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/appsettings.json
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.StaticWebAssets.xml
+<<<<<<< HEAD
+=======
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/app.db
+>>>>>>> c1030ea39d696f28916748268619c00b8b14f9c7
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.StaticWebAssets.xml
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.deps.json
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.runtimeconfig.json
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.runtimeconfig.dev.json
@@ -11,8 +14,6 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.Views.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/wdpr-h.Views.pdb
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Humanizer.dll
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
@@ -35,9 +36,6 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Embedded.dll
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.Identity.Client.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
@@ -161,15 +159,14 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.TagHelpers.input.cache
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.TagHelpers.output.cache
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.RazorCoreGenerate.cache
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Login.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Logout.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Register.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/_ViewImports.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/Error.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/_ViewImports.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/_ViewStart.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.RazorTargetAssemblyInfo.cache
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.RazorTargetAssemblyInfo.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.Views.pdb
@@ -178,3 +175,50 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/ref/wdpr-h.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.pdb
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeconfig.cache
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/Error.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Index 2.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Privacy 2.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial 2.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial 3.cshtml.g.cs
