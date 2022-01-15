@@ -15769,11 +15769,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Shared/_ValidationScriptsPartial 3.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial 3.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15811,11 +15806,6 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Aanmeld/Edit.cshtml",
       "TargetPath": "Views\\Aanmeld\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Shared/_ValidationScriptsPartial 2.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial 2.cshtml",
       "FileKind": "mvc"
     },
     {
