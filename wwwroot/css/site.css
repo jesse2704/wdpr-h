@@ -5,6 +5,13 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: #0366d6;
+}
+
+.br {
+  height: 30px;
+  width: 1200px;
+  background: rgb(255, 115, 0);
 }
 
 /* Provide sufficient contrast against white background */
