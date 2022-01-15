@@ -53,7 +53,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Naam,Achternaam,Geboortedatum,Aandoening,Email,voorKind,heeftVerwijzing")] Aanmeld aanmeld)
+        public async Task<IActionResult> Create([Bind("Id,Naam,Achternaam,Geboortedatum,Aandoening,Email,hulpVerlenerId,voorKind,heeftVerwijzing")] Aanmeld aanmeld)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Naam,Achternaam,Geboortedatum,Aandoening,Email,voorKind,heeftVerwijzing")] Aanmeld aanmeld)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Naam,Achternaam,Geboortedatum,Aandoening,Email,hulpVerlenerId,voorKind,heeftVerwijzing")] Aanmeld aanmeld)
         {
             if (id != aanmeld.Id)
             {

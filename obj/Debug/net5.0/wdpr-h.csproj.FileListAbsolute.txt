@@ -208,12 +208,8 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Details.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Edit.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/ClientZelfhulpgroep/Index.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Create.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Delete.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Details.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Edit.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Index.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial 2.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial 3.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Index 2.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Privacy 2.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Index.cshtml.g.cs

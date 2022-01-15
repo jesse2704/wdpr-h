@@ -24,6 +24,8 @@ namespace wdpr_h.Models
         [Required(ErrorMessage = "The email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public String Email {get;set;}
+        [Required]
+        public Guid hulpVerlenerId {get;set;}
         public Boolean voorKind {get;set;}
         public Boolean heeftVerwijzing {get;set;}
     
