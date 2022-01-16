@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using wdpr_h.Data;
 using wdpr_h.Models;
 
 namespace wdpr_h.Controllers
 {
     public class ClientZelfhulpgroepController : Controller
     {
-        private readonly MyContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ClientZelfhulpgroepController(MyContext context)
+        public ClientZelfhulpgroepController(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -6,15 +6,16 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using wdpr_h.Data;
 using wdpr_h.Models;
 
 namespace wdpr_h.Controllers
 {
     public class ZelfhulpgroepController : Controller
     {
-        private readonly MyContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ZelfhulpgroepController(MyContext context)
+        public ZelfhulpgroepController(ApplicationDbContext context)
         {
             _context = context;
         }

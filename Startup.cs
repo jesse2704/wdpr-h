@@ -12,6 +12,7 @@ using wdpr_h.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using wdpr_h.Models;
 
 namespace wdpr_h
 {
@@ -33,6 +34,15 @@ namespace wdpr_h
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<Client>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<Hulpverlener>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<Moderator>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -81,8 +91,8 @@ namespace wdpr_h
                 options.SlidingExpiration = true;
             });
 
-            services.AddDbContext<MyContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("MyContext")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("app")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -145,21 +155,21 @@ namespace wdpr_h
             };
 
              //Hier wordt de moderator aangemaakt
-            var moderator_user = new IdentityUser
+            var moderator_user = new Moderator
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
                 Email = Configuration["AppSettings:ModeratorEmail"],
             };
 
             //Hier wordt de hulpverlener aangemaakt
-            var hulpverlener_user = new IdentityUser
+            var hulpverlener_user = new Hulpverlener
             {
                 UserName = Configuration["AppSettings:HulpverlenerName"],
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
             };
 
              //Hier wordt de client aangemaakt
-            var client_user = new IdentityUser
+            var client_user = new Client
             {
                 UserName = Configuration["AppSettings:ClientName"],
                 Email = Configuration["AppSettings:ClientEmail"],

@@ -1,13 +1,11 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace wdpr_h.Models
 {
-    public class Hulpverlener
+    public class Hulpverlener : IdentityUser
     {
-        [Key]
-        [Required]
-        public Guid Id {get; set;}
         [Required]
         [StringLength(30)]
         public String Naam {get; set;}

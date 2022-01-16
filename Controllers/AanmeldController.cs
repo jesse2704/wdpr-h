@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using wdpr_h.Data;
 using wdpr_h.Models;
 
 namespace wdpr_h.Controllers
 {
     public class AanmeldController : Controller
     {
-        private readonly MyContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public AanmeldController(MyContext context)
+        public AanmeldController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -45,7 +46,10 @@ namespace wdpr_h.Controllers
         // GET: Aanmeld/Create
         public IActionResult Create()
         {
-            return View();
+            AanmeldViewModel aanmeldViewModel = new AanmeldViewModel();
+            aanmeldViewModel.Hulpverleners = _context.Hulpverlener.ToList();
+            
+            return View(aanmeldViewModel);
         }
 
         // POST: Aanmeld/Create
@@ -57,10 +61,6 @@ namespace wdpr_h.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Check if user is > = 16
-                
-
-                
                 aanmeld.Id = Guid.NewGuid();
                 _context.Add(aanmeld);
                 await _context.SaveChangesAsync();

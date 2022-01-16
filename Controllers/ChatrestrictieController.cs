@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using wdpr_h.Data;
 using wdpr_h.Models;
 
 namespace wdpr_h.Controllers
 {
     public class ChatrestrictieController : Controller
     {
-        private readonly MyContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ChatrestrictieController(MyContext context)
+        public ChatrestrictieController(ApplicationDbContext context)
         {
             _context = context;
         }

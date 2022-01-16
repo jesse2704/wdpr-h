@@ -1,13 +1,11 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace wdpr_h.Models
 {
-    public class Client
+    public class Client : IdentityUser
     {
-        [Key]
-        [Required]
-        public Guid User { get; set; }
         [Required]
         [StringLength(15)]
         public String Nicknaam { get; set; }
@@ -19,7 +17,6 @@ namespace wdpr_h.Models
         [Required]
         [StringLength(30)]
         public String Achternaam { get; set; }
-        public String Email {get;set;}
         [Required]
         public Boolean isKindAccount {get;set;}
         public Guid OuderAccount {get;set;}
