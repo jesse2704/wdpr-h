@@ -1,4 +1,4 @@
-@model IEnumerable<wdpr_h.Models.Hulpverlener>
+@model IEnumerable<wdpr_h.Models.Client>
 
 @{
     Layout = null;
@@ -19,13 +19,25 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Nicknaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeeftijdsCategorie)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Achternaam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Specialisme)
+                @Html.DisplayNameFor(model => model.isKindAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OuderAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HulpverlenerId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Wachtwoord)
@@ -79,13 +91,25 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Nicknaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeeftijdsCategorie)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Naam)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Achternaam)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Specialisme)
+                @Html.DisplayFor(modelItem => item.isKindAccount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OuderAccount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HulpverlenerId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Wachtwoord)

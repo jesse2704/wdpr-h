@@ -47,7 +47,7 @@
                     <span asp-validation-for="Aanmeld.Email" class="text-danger"></span>
                 </div>
 
-                    <select class="form-select" asp-for"Aanmeld.HulpverlenerId>
+                    <select class="form-select" asp-for="Aanmeld.hulpVerlenerId">
                         <option selected>Selecteer een hulpverlener</option>
                         @foreach(var item in Model.Hulpverleners)
                         {

@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using wdpr_h.Data;
 
-namespace wdpr_h.Data.Migrations
+namespace wdpr_h.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220116160804_InitialCreate")]
+    [Migration("20220116172137_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

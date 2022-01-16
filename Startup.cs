@@ -162,10 +162,13 @@ namespace wdpr_h
             };
 
             //Hier wordt de hulpverlener aangemaakt
-            var hulpverlener_user = new Hulpverlener
+            var hulpverlener_user = new Hulpverlener()
             {
                 UserName = Configuration["AppSettings:HulpverlenerName"],
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
+                Specialisme = Configuration["AppSettings:HulpverlenerSpecialisme"],
+                Naam = Configuration["AppSettings:HulpverlenerNaam"],
+                
             };
 
              //Hier wordt de client aangemaakt

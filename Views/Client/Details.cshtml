@@ -1,4 +1,4 @@
-@model wdpr_h.Models.Hulpverlener
+@model wdpr_h.Models.Client
 
 @{
     Layout = null;
@@ -14,9 +14,21 @@
 <body>
 
 <div>
-    <h4>Hulpverlener</h4>
+    <h4>Client</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nicknaam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nicknaam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LeeftijdsCategorie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LeeftijdsCategorie)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Naam)
         </dt>
@@ -30,10 +42,22 @@
             @Html.DisplayFor(model => model.Achternaam)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Specialisme)
+            @Html.DisplayNameFor(model => model.isKindAccount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Specialisme)
+            @Html.DisplayFor(model => model.isKindAccount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OuderAccount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OuderAccount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HulpverlenerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HulpverlenerId)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Wachtwoord)
