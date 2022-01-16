@@ -29,7 +29,7 @@ namespace wdpr_h.Models
         [Required]
         [Display(Name = "Hulpverlener")]
         public Guid hulpVerlenerId {get;set;}
-        [DisplayName("Account voor uw kind?")]
+        [Display(Name = "Account voor uw kind?")]
         public Boolean voorKind {get;set;}
         [DisplayName("In bezit van een doorverwijzing?")]
         public Boolean heeftVerwijzing {get;set;}
