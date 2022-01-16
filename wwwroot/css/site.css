@@ -7,7 +7,9 @@ a.navbar-brand {
   word-break: break-all;
   color: #0366d6;
 }
-.overons-altekst {
+
+/*alinea kopjes bij over ons pagina */
+.overons-altekst { 
   font-size: 20px;
   color: #297CF7;
 }
