@@ -13,6 +13,11 @@ a.navbar-brand {
   font-size: 20px;
   color: #297CF7;
 }
+
+.h1_Overons{
+  font-style: italic;
+  text-align: center;
+}
 .br {
   height: 30px;
   width: 1200px;

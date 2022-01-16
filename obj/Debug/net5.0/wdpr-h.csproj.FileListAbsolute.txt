@@ -213,6 +213,7 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Details.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Edit.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Client/Index.cshtml.g.cs
+<<<<<<< Updated upstream
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Create.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Delete.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Details.cshtml.g.cs
@@ -220,6 +221,7 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Aanmeld/Index.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Index 2.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Privacy 2.cshtml.g.cs
+>>>>>>> Stashed changes
 C:\Users\Saghi\Downloads\wdpr-h\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Saghi\Downloads\wdpr-h\bin\Debug\net5.0\appsettings.json
 C:\Users\Saghi\Downloads\wdpr-h\bin\Debug\net5.0\app.db
