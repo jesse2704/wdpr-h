@@ -1,7 +1,7 @@
 @model IEnumerable<wdpr_h.Models.Hulpverlener>
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -15,11 +15,21 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form action="/Hulpverlener/Index" method="get">
+    <input hidden type="text" name = "sorteer" value = '@ViewData["sorteer"]'>
+</form>
+<a onclick="func()">
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Naam)
+                @if((string)ViewData["sorteer"] == "naam_oplopend") {
+                <a asp-controller = "Hulpverlener" asp-action="Index" asp-route-sorteer="naam_aflopend">↓</a>
+                } else  {
+                 <a asp-controller = "Hulpverlener" asp-action="Index" asp-route-sorteer="naam_oplopend">↑</a>
+                }
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Achternaam)

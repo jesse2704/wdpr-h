@@ -7805,19 +7805,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/jesseakoma/.nuget/packages/": {}
+    "C:\\Users\\Saghi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
+      "projectUniqueName": "C:\\Users\\Saghi\\Downloads\\wdpr-h\\wdpr-h.csproj",
       "projectName": "wdpr-h",
-      "projectPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
-      "packagesPath": "/Users/jesseakoma/.nuget/packages/",
-      "outputPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/",
+      "projectPath": "C:\\Users\\Saghi\\Downloads\\wdpr-h\\wdpr-h.csproj",
+      "packagesPath": "C:\\Users\\Saghi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saghi\\Downloads\\wdpr-h\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jesseakoma/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Saghi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7896,7 +7896,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

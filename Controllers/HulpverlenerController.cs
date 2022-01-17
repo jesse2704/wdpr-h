@@ -19,11 +19,32 @@ namespace wdpr_h.Controllers
             _context = context;
         }
 
-        // GET: Hulpverlener
-        public async Task<IActionResult> Index()
+        //sorteermethode
+        public  IQueryable<Hulpverlener> Sorteer(IQueryable<Hulpverlener> lijst, string sorteer)
         {
-            return View(await _context.Hulpverlener.ToListAsync());
+
+            if (sorteer == "naam_oplopend")
+
+                return lijst.OrderBy(h => h.Naam.ToLower());
+            else 
+                return lijst.OrderByDescending(h => h.Naam);
+        
         }
+
+        
+
+        // GET: Hulpverlener
+
+        public async Task<IActionResult> Index(string sorteer,string zoek, int pagina)
+        {
+            if (sorteer == null) sorteer = "naam_oplopend";
+            ViewData["sorteer"] = sorteer;
+            return View(await Sorteer(_context.Hulpverlener, sorteer).ToListAsync());
+        }
+        // public async Task<IActionResult> Index()
+        // {
+        //     return View(await _context.Hulpverlener.ToListAsync());
+        // }
 
         // GET: Hulpverlener/Details/5
         public async Task<IActionResult> Details(string id)
