@@ -17,7 +17,10 @@
 </p>
 
 <form action="/Hulpverlener/Index" method="get">
+    <label for="Naam">Zoek op naam:</label>
+    <input type="text" id="Naam" name = "zoek">
     <input hidden type="text" name = "sorteer" value = '@ViewData["sorteer"]'>
+    <input type="submit" value = "Zoek!">
 </form>
 <a onclick="func()">
 <table class="table">

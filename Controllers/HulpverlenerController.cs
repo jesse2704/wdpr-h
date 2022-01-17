@@ -31,16 +31,33 @@ namespace wdpr_h.Controllers
         
         }
 
-        
+         //zoekmethode
+        public  IQueryable<Hulpverlener> Zoek(IQueryable<Hulpverlener> lijst, string zoek)
+        {
+            if(zoek == null)
+            return lijst;
+            else
+            return lijst.Where(h => h.Naam.ToLower().Contains(zoek.ToLower()));
+        }
 
         // GET: Hulpverlener
 
-        public async Task<IActionResult> Index(string sorteer,string zoek, int pagina)
+        public async Task<IActionResult> Index(string sorteer,string zoek)
+        
         {
             if (sorteer == null) sorteer = "naam_oplopend";
             ViewData["sorteer"] = sorteer;
-            return View(await Sorteer(_context.Hulpverlener, sorteer).ToListAsync());
+            return View(await Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek).ToListAsync());
         }
+        
+        
+        // {
+        //     if (sorteer == null) sorteer = "naam_oplopend";
+        //     ViewData["sorteer"] = sorteer;
+        //     return View(await Sorteer(_context.Hulpverlener, sorteer).ToListAsync());
+        // }
+
+
         // public async Task<IActionResult> Index()
         // {
         //     return View(await _context.Hulpverlener.ToListAsync());
