@@ -54,9 +54,9 @@ namespace wdpr_h.Controllers
             if (sorteer == null) sorteer = "naam_oplopend";
             ViewData["sorteer"] = sorteer;
             ViewData["pagina"] = pagina;
-            ViewData["heeftVolgende"] = (pagina + 1) * 1  < _context.Hulpverlener.Count();
+            ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Hulpverlener.Count();
             ViewData["heeftVorige"] = pagina > 0;
-            return View(await Pagineer(Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek), pagina, 1).ToListAsync());
+            return View(await Pagineer(Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek), pagina, 10).ToListAsync());
         }
         
         
