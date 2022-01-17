@@ -19,9 +19,14 @@ namespace wdpr_h.Controllers
             _context = context;
         }
 
-         public IActionResult Orthopedagoog()
+         public async Task<IActionResult> Orthopedagoog(string sorteer,string zoek, int pagina)
         {
-            return View();
+            if (sorteer == null) sorteer = "naam_oplopend";
+            ViewData["sorteer"] = sorteer;
+            ViewData["pagina"] = pagina;
+            ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Hulpverlener.Count();
+            ViewData["heeftVorige"] = pagina > 0;
+            return View(await Pagineer(Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek), pagina, 10).ToListAsync());
         }
 
         //sorteermethode
