@@ -5,6 +5,28 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: #0366d6;
+}
+
+/*alinea kopjes bij over ons pagina */
+.overons-altekst { 
+  font-size: 20px;
+  color: #297CF7;
+}
+
+.h1_Overons{
+  font-style: italic;
+  text-align: center;
+}
+.br {
+  height: 30px;
+  width: 1200px;
+  background: rgb(255, 115, 0);
+}
+.br1 {
+  height: 30px;
+  width: 1110px;
+  background: rgb(255, 115, 0);
 }
 
 /* Provide sufficient contrast against white background */

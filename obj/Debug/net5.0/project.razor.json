@@ -15699,6 +15699,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Home/Overons.cshtml",
+      "TargetPath": "Views\\Home\\Overons.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/Details.cshtml",
       "TargetPath": "Views\\Hulpverlener\\Details.cshtml",
       "FileKind": "mvc"
