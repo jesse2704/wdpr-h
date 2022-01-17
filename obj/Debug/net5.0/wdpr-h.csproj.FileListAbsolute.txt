@@ -436,3 +436,4 @@ C:\Users\Saghi\Downloads\wdpr-h\obj\Debug\net5.0\wdpr-h.dll
 C:\Users\Saghi\Downloads\wdpr-h\obj\Debug\net5.0\ref\wdpr-h.dll
 C:\Users\Saghi\Downloads\wdpr-h\obj\Debug\net5.0\wdpr-h.pdb
 C:\Users\Saghi\Downloads\wdpr-h\obj\Debug\net5.0\wdpr-h.genruntimeconfig.cache
+C:\Users\Saghi\Downloads\wdpr-h\obj\Debug\net5.0\Razor\Views\Hulpverlener\Orthopedagoog.cshtml.g.cs

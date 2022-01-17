@@ -15689,6 +15689,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Saghi\\Downloads\\wdpr-h\\Views\\Hulpverlener\\Orthopedagoog.cshtml",
+      "TargetPath": "Views\\Hulpverlener\\Orthopedagoog.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Saghi\\Downloads\\wdpr-h\\Views\\Client\\Create.cshtml",
       "TargetPath": "Views\\Client\\Create.cshtml",
       "FileKind": "mvc"

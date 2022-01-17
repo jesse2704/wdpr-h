@@ -19,6 +19,11 @@ namespace wdpr_h.Controllers
             _context = context;
         }
 
+         public IActionResult Orthopedagoog()
+        {
+            return View();
+        }
+
         //sorteermethode
         public  IQueryable<Hulpverlener> Sorteer(IQueryable<Hulpverlener> lijst, string sorteer)
         {
