@@ -154,5 +154,11 @@
 }
     </tbody>
 </table>
+@if((bool)ViewData["heeftVorige"]){
+<a asp-controller = "Hulpverlener" asp-action="Index" asp-route-pagina='@((int)ViewData["pagina"] - 1)' asp-route-sorteer = '@ViewData["sorteer"]'>Vorige</a>
+}
+@if((bool)ViewData["heeftVolgende"]){
+<a asp-controller = "Hulpverlener" asp-action="Index" asp-route-pagina='@((int)ViewData["pagina"] + 1)' asp-route-sorteer = '@ViewData["sorteer"]'>Volgende</a>
+}
 </body>
 </html>

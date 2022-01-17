@@ -39,15 +39,24 @@ namespace wdpr_h.Controllers
             else
             return lijst.Where(h => h.Naam.ToLower().Contains(zoek.ToLower()));
         }
+        //Pagineren
+        public  IQueryable<Hulpverlener> Pagineer(IQueryable<Hulpverlener> lijst, int pagina, int aantal)
+        {
+            if (pagina < 0) 
+                pagina = 0;
+            return lijst.Skip(pagina * aantal).Take(aantal);
+        }
 
         // GET: Hulpverlener
 
-        public async Task<IActionResult> Index(string sorteer,string zoek)
-        
+        public async Task<IActionResult> Index(string sorteer,string zoek, int pagina)
         {
             if (sorteer == null) sorteer = "naam_oplopend";
             ViewData["sorteer"] = sorteer;
-            return View(await Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek).ToListAsync());
+            ViewData["pagina"] = pagina;
+            ViewData["heeftVolgende"] = (pagina + 1) * 1  < _context.Hulpverlener.Count();
+            ViewData["heeftVorige"] = pagina > 0;
+            return View(await Pagineer(Zoek(Sorteer(_context.Hulpverlener, sorteer),  zoek), pagina, 1).ToListAsync());
         }
         
         
