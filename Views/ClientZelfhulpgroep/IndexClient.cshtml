@@ -1,4 +1,4 @@
-@model IEnumerable<wdpr_h.Models.ClientZelfhulpgroepViewModel>
+@model List<Zelfhulpgroep>
 @using Microsoft.AspNetCore.Identity
 
 @{
@@ -25,7 +25,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Titel)
+                Titel
                 @if((string)ViewData["sorteer"] == "naam_oplopend") {
                 <a asp-controller = "ClientZelfhulpgroep" asp-action="IndexClient" asp-route-sorteer="naam_aflopend">↓</a>
                 } else  {
@@ -33,10 +33,10 @@
                 }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Onderwerp)
+                Onderwerp
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.LeeftijdsCategorie)
+                Leeftijdscategorie
             </th>
             <th></th>
         </tr>
@@ -45,16 +45,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.Titel)
+                @Html.DisplayFor(modelItem => item.Titel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.Onderwerp)
+                @Html.DisplayFor(modelItem => item.Onderwerp)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.LeeftijdsCategorie)
+                @Html.DisplayFor(modelItem => item.LeeftijdsCategorie)
             </td>
             <td>
-                <a asp-action="Aanmelden" asp-route-id="@item.Zelfhulpgroep.Id" class="btn btn-primary">Aanmelden</a>
+                <a asp-action="Aanmelden" asp-route-id="@item.Id" class="btn btn-primary">Aanmelden</a>
             </td> 
         </tr>
 }

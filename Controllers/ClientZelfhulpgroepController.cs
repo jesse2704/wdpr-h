@@ -33,32 +33,41 @@ namespace wdpr_h.Controllers
             ViewData["pagina"] = pagina;
             ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Zelfhulpgroep.Count();
             ViewData["heeftVorige"] = pagina > 0;
+            ViewData["clientZelfhulpgroepList"] = _context.ClientZelfhulpgroep.ToList();
 
-            ClientZelfhulpgroepViewModel clientZelfhulpgroepViewModel = new ClientZelfhulpgroepViewModel();
+                var zelfhulpgroepList = _context.Zelfhulpgroep;
+                return View(Pagineer(
+                                    Zoek(
+                                        Sorteer(zelfhulpgroepList, sorteer)
+                                        , zoek)
+                                    , pagina, 10)
+                            .ToList());
+
+            //ClientZelfhulpgroepViewModel clientZelfhulpgroepViewModel = new ClientZelfhulpgroepViewModel();
 
 
-            clientZelfhulpgroepViewModel.ZelfhulpgroepList = _context.Zelfhulpgroep.ToList();
-            clientZelfhulpgroepViewModel.ClientZelfhulpgroep = _context.ClientZelfhulpgroep.ToList();
+            //clientZelfhulpgroepViewModel.ZelfhulpgroepList = _context.Zelfhulpgroep.ToList();
+            //clientZelfhulpgroepViewModel.ClientZelfhulpgroep = _context.ClientZelfhulpgroep.ToList();
 
-            return View(await Pagineer(Zoek(Sorteer(clientZelfhulpgroepViewModel, sorteer),  zoek), pagina, 10).ToListAsync());
+            //return View(await Pagineer(Zoek(Sorteer(clientZelfhulpgroepViewModel, sorteer),  zoek), pagina, 10).ToListAsync());
             //return View(clientZelfhulpgroepViewModel);
         }
-        public IQueryable<ClientZelfhulpgroepViewModel> Sorteer(IQueryable<ClientZelfhulpgroepViewModel> lijst, string sorteer)
+        public IQueryable<Zelfhulpgroep> Sorteer(IQueryable<Zelfhulpgroep> lijst, string sorteer)
         {
 
-            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Zelfhulpgroep.Titel.ToLower());
+            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Titel.ToLower());
                 else 
-                return lijst.OrderByDescending(h => h.Zelfhulpgroep.Titel);
+                return lijst.OrderByDescending(h => h.Titel);
         
         }
-        public  IQueryable<ClientZelfhulpgroepViewModel> Zoek(IQueryable<ClientZelfhulpgroepViewModel> lijst, string zoek)
+        public  IQueryable<Zelfhulpgroep> Zoek(IQueryable<Zelfhulpgroep> lijst, string zoek)
         {
             if(zoek == null) return lijst;
                 else
 
-            return lijst.Where(z => z.Zelfhulpgroep.Titel.ToLower().Contains(zoek.ToLower()));
+            return lijst.Where(z => z.Titel.ToLower().Contains(zoek.ToLower()));
         }
-        public  IQueryable<ClientZelfhulpgroepViewModel> Pagineer(IQueryable<ClientZelfhulpgroepViewModel> lijst, int pagina, int aantal)
+        public  IQueryable<Zelfhulpgroep> Pagineer(IQueryable<Zelfhulpgroep> lijst, int pagina, int aantal)
         {
             if (pagina < 0) pagina = 0;
 
@@ -192,6 +201,7 @@ namespace wdpr_h.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Client")]
         public async Task<IActionResult> Aanmelden(Guid id)
         {
             //Haal de user GUID op
