@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,6 +24,17 @@ namespace wdpr_h.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.ClientZelfhulpgroep.ToListAsync());
+        }
+
+        public IActionResult IndexClient()
+        {
+            ClientZelfhulpgroepViewModel clientZelfhulpgroepViewModel = new ClientZelfhulpgroepViewModel();
+
+
+            clientZelfhulpgroepViewModel.ZelfhulpgroepList = _context.Zelfhulpgroep.ToList();
+            clientZelfhulpgroepViewModel.ClientZelfhulpgroep = _context.ClientZelfhulpgroep.ToList();
+
+            return View(clientZelfhulpgroepViewModel);
         }
 
         // GET: ClientZelfhulpgroep/Details/5
@@ -148,6 +160,26 @@ namespace wdpr_h.Controllers
         private bool ClientZelfhulpgroepExists(int id)
         {
             return _context.ClientZelfhulpgroep.Any(e => e.Id == id);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Aanmelden(Guid id)
+        {
+            //Haal de user GUID op
+            var userId =  User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            //Voeg nieuwe client toe met bijbehorende gegevens
+            ClientZelfhulpgroep newClientZelfhulpgroep = new ClientZelfhulpgroep();
+
+            //Parse de opgehaalde String om naar Guid
+            newClientZelfhulpgroep.IdClient = Guid.Parse(userId);
+            
+            newClientZelfhulpgroep.IdGroep = id;
+            _context.ClientZelfhulpgroep.Add(newClientZelfhulpgroep);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

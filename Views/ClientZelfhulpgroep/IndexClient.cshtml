@@ -1,0 +1,51 @@
+@model wdpr_h.Models.ClientZelfhulpgroepViewModel
+@using Microsoft.AspNetCore.Identity
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Onderwerp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zelfhulpgroep.LeeftijdsCategorie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ZelfhulpgroepList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Onderwerp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeeftijdsCategorie)
+            </td>
+            <td>
+                <a asp-action="Aanmelden" asp-route-id="@item.Id" class="btn btn-primary">Aanmelden</a>
+            </td> 
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
