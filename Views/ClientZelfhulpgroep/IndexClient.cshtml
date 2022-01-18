@@ -18,6 +18,11 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Zelfhulpgroep.Titel)
+                @if((string)ViewData["sorteer"] == "naam_oplopend") {
+                <a asp-controller = "ClientZelfhulpgroep" asp-action="IndexClient" asp-route-sorteer="naam_aflopend">↓</a>
+                } else  {
+                <a asp-controller = "ClientZelfhulpgroep" asp-action="IndexClient" asp-route-sorteer="naam_oplopend">↑</a>
+                }
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Zelfhulpgroep.Onderwerp)
