@@ -26,7 +26,7 @@ namespace wdpr_h.Controllers
             return View(await _context.ClientZelfhulpgroep.ToListAsync());
         }
 
-        public IActionResult IndexClient(string sorteer,string zoek, int pagina)
+        public async Task<IActionResult> IndexClient(string sorteer,string zoek, int pagina)
         {
             if (sorteer == null) sorteer = "naam_oplopend";
             ViewData["sorteer"] = sorteer;
@@ -40,24 +40,25 @@ namespace wdpr_h.Controllers
             clientZelfhulpgroepViewModel.ZelfhulpgroepList = _context.Zelfhulpgroep.ToList();
             clientZelfhulpgroepViewModel.ClientZelfhulpgroep = _context.ClientZelfhulpgroep.ToList();
 
-            return View(clientZelfhulpgroepViewModel);
+            return View(await Pagineer(Zoek(Sorteer(clientZelfhulpgroepViewModel, sorteer),  zoek), pagina, 10).ToListAsync());
+            //return View(clientZelfhulpgroepViewModel);
         }
-        public  IQueryable<Zelfhulpgroep> Sorteer(IQueryable<Zelfhulpgroep> lijst, string sorteer)
+        public IQueryable<ClientZelfhulpgroepViewModel> Sorteer(IQueryable<ClientZelfhulpgroepViewModel> lijst, string sorteer)
         {
 
-            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Titel.ToLower());
+            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Zelfhulpgroep.Titel.ToLower());
                 else 
-                return lijst.OrderByDescending(h => h.Titel);
+                return lijst.OrderByDescending(h => h.Zelfhulpgroep.Titel);
         
         }
-        public  IQueryable<Zelfhulpgroep> Zoek(IQueryable<Zelfhulpgroep> lijst, string zoek)
+        public  IQueryable<ClientZelfhulpgroepViewModel> Zoek(IQueryable<ClientZelfhulpgroepViewModel> lijst, string zoek)
         {
             if(zoek == null) return lijst;
                 else
 
-            return lijst.Where(z => z.Titel.ToLower().Contains(zoek.ToLower()));
+            return lijst.Where(z => z.Zelfhulpgroep.Titel.ToLower().Contains(zoek.ToLower()));
         }
-        public  IQueryable<Zelfhulpgroep> Pagineer(IQueryable<Zelfhulpgroep> lijst, int pagina, int aantal)
+        public  IQueryable<ClientZelfhulpgroepViewModel> Pagineer(IQueryable<ClientZelfhulpgroepViewModel> lijst, int pagina, int aantal)
         {
             if (pagina < 0) pagina = 0;
 
