@@ -26,8 +26,14 @@ namespace wdpr_h.Controllers
             return View(await _context.ClientZelfhulpgroep.ToListAsync());
         }
 
-        public IActionResult IndexClient()
+        public IActionResult IndexClient(string sorteer,string zoek, int pagina)
         {
+            if (sorteer == null) sorteer = "naam_oplopend";
+            ViewData["sorteer"] = sorteer;
+            ViewData["pagina"] = pagina;
+            ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Zelfhulpgroep.Count();
+            ViewData["heeftVorige"] = pagina > 0;
+
             ClientZelfhulpgroepViewModel clientZelfhulpgroepViewModel = new ClientZelfhulpgroepViewModel();
 
 
@@ -36,7 +42,6 @@ namespace wdpr_h.Controllers
 
             return View(clientZelfhulpgroepViewModel);
         }
-
         public  IQueryable<Zelfhulpgroep> Sorteer(IQueryable<Zelfhulpgroep> lijst, string sorteer)
         {
 
