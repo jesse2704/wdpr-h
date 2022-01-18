@@ -7805,26 +7805,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jesse\\.nuget\\packages\\": {}
+    "/Users/jesseakoma/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesse\\Documents\\School\\WDPR\\wdpr-h\\wdpr-h.csproj",
+      "projectUniqueName": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
       "projectName": "wdpr-h",
-      "projectPath": "C:\\Users\\jesse\\Documents\\School\\WDPR\\wdpr-h\\wdpr-h.csproj",
-      "packagesPath": "C:\\Users\\jesse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesse\\Documents\\School\\WDPR\\wdpr-h\\obj\\",
+      "projectPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
+      "packagesPath": "/Users/jesseakoma/.nuget/packages/",
+      "outputPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jesse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jesseakoma/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7890,12 +7888,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7904,7 +7896,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

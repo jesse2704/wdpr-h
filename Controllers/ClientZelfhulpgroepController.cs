@@ -66,7 +66,7 @@ namespace wdpr_h.Controllers
             if(zoek == null) return lijst;
                 else
 
-            return lijst.Where(z => z.Titel.ToLower().Contains(zoek.ToLower()));
+            return lijst.Where(z => z.Onderwerp.ToLower().Contains(zoek.ToLower()) || z.LeeftijdsCategorie.ToLower().Contains(zoek.ToLower()));
         }
         public  IQueryable<Zelfhulpgroep> Pagineer(IQueryable<Zelfhulpgroep> lijst, int pagina, int aantal)
         {
