@@ -37,6 +37,28 @@ namespace wdpr_h.Controllers
             return View(clientZelfhulpgroepViewModel);
         }
 
+        public  IQueryable<Zelfhulpgroep> Sorteer(IQueryable<Zelfhulpgroep> lijst, string sorteer)
+        {
+
+            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Titel.ToLower());
+                else 
+                return lijst.OrderByDescending(h => h.Titel);
+        
+        }
+        public  IQueryable<Zelfhulpgroep> Zoek(IQueryable<Zelfhulpgroep> lijst, string zoek)
+        {
+            if(zoek == null) return lijst;
+                else
+
+            return lijst.Where(z => z.Titel.ToLower().Contains(zoek.ToLower()));
+        }
+        public  IQueryable<Zelfhulpgroep> Pagineer(IQueryable<Zelfhulpgroep> lijst, int pagina, int aantal)
+        {
+            if (pagina < 0) pagina = 0;
+
+            return lijst.Skip(pagina * aantal).Take(aantal);
+        }
+
         // GET: ClientZelfhulpgroep/Details/5
         public async Task<IActionResult> Details(int? id)
         {
