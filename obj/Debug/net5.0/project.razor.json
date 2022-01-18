@@ -15844,6 +15844,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/Orthopedagoog.cshtml",
+      "TargetPath": "Views\\Hulpverlener\\Orthopedagoog.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Zelfhulpgroep/Create.cshtml",
       "TargetPath": "Views\\Zelfhulpgroep\\Create.cshtml",
       "FileKind": "mvc"

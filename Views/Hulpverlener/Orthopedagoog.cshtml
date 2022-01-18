@@ -1,5 +1,4 @@
-@model IEnumerable<wdpr_h.Models.ClientZelfhulpgroepViewModel>
-@using Microsoft.AspNetCore.Identity
+@model IEnumerable<wdpr_h.Models.Hulpverlener>
 
 @{
     Layout = "_Layout";
@@ -10,9 +9,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Orthopedagoog</title>
 </head>
 <body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 
 <form action="/ClientZelfhulpgroep/IndexClient" method="get">
     <label for="Naam">Zoek op naam:</label>
@@ -20,12 +22,12 @@
     <input hidden type="text" name = "sorteer" value = '@ViewData["sorteer"]'>
     <input type="submit" value = "Zoek!">
 </form>
-
+<a onclick="func()">
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Titel)
+                @Html.DisplayNameFor(model => model.Naam)
                 @if((string)ViewData["sorteer"] == "naam_oplopend") {
                 <a asp-controller = "ClientZelfhulpgroep" asp-action="IndexClient" asp-route-sorteer="naam_aflopend">↓</a>
                 } else  {
@@ -33,10 +35,16 @@
                 }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.Onderwerp)
+                @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Zelfhulpgroep.LeeftijdsCategorie)
+                @Html.DisplayNameFor(model => model.Specialisme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th></th>
         </tr>
@@ -45,20 +53,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.Titel)
+                @item.Naam
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.Onderwerp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zelfhulpgroep.LeeftijdsCategorie)
-            </td>
-            <td>
-                <a asp-action="Aanmelden" asp-route-id="@item.Zelfhulpgroep.Id" class="btn btn-primary">Aanmelden</a>
-            </td> 
-        </tr>
-}
-    </tbody>
-</table>
+</tr>
+   }
+      </tbody>
 </body>
 </html>
