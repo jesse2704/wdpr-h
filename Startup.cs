@@ -58,7 +58,7 @@ namespace wdpr_h
                     policy => policy.RequireRole("Client"));
 
             });
-            services.AddRazorRuntimeCompilation();
+            //services.AddRazorRuntimeCompilation();
 
             services.Configure<IdentityOptions>(options =>
     {
