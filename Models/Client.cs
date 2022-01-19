@@ -20,9 +20,6 @@ namespace wdpr_h.Models
         [Required]
         public Boolean isKindAccount {get;set;}
         public Guid OuderAccount {get;set;}
-        [Required]
-        public int HulpverlenerId { get; set; }
-        [Required]
-        public String Wachtwoord { get; set; }
+        public Guid HulpverlenerId { get; set; }
     }
 }
