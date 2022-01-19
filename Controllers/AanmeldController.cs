@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,8 +23,10 @@ namespace wdpr_h.Controllers
         // GET: Aanmeld
         public async Task<IActionResult> Index()
         {
-            
-            return View(await _context.Aanmeld.ToListAsync());
+              //Haal de user GUID op
+            var hulpverlenerId =  User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            return View(await _context.Aanmeld.Where(a => a.hulpVerlenerId == Guid.Parse(hulpverlenerId)).ToListAsync());
         }
 
         // GET: Aanmeld/Details/5
