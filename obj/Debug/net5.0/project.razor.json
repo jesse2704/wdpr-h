@@ -15874,6 +15874,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/ClientZelfhulpgroep/IndexClient.cshtml",
+      "TargetPath": "Views\\ClientZelfhulpgroep\\IndexClient.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Delete.cshtml",
       "TargetPath": "Views\\Moderator\\Delete.cshtml",
       "FileKind": "mvc"

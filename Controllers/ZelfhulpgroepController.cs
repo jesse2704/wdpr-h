@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using wdpr_h.Data;
 using wdpr_h.Models;
+using System.Security.Claims;
 
 namespace wdpr_h.Controllers
 {
@@ -45,7 +46,7 @@ namespace wdpr_h.Controllers
         }
 
         // GET: Zelfhulpgroep/Create
-        [Authorize(Roles = "Hulpverlener")]
+        //[Authorize(Roles = "Hulpverlener")]
         public IActionResult Create()
         {
             return View();
@@ -152,5 +153,6 @@ namespace wdpr_h.Controllers
         {
             return _context.Zelfhulpgroep.Any(e => e.Id == id);
         }
+
     }
 }
