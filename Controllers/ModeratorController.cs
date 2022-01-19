@@ -22,9 +22,11 @@ namespace wdpr_h.Controllers
         // GET: Moderator
         public async Task<IActionResult> Index()
         {
-            ViewData["clients"] = _context.Client.ToListAsync();
-            ViewData["hulpverleners"] = _context.Hulpverlener.ToListAsync();
-            return View(await _context.Moderator.ToListAsync());
+            ModeratorViewModel modelMod = new ModeratorViewModel();
+            modelMod.Hulpverleners = await _context.Hulpverlener.ToListAsync();
+            modelMod.Clients = await _context.Client.ToListAsync();
+            
+            return View(modelMod);
         }
 
         // GET: Moderator/Details/5
