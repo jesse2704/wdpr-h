@@ -54,6 +54,7 @@ namespace wdpr_h.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
+            ViewData["hasParent"] = _context.Client.Where(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000")).Any();
             
             if (aanmeld == null)
             {

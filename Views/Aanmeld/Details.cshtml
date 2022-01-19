@@ -7,82 +7,90 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
 </head>
+
 <body>
 
-<div>
-    <h4>Aanmeldgegevens</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Naam)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Naam)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Achternaam)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Achternaam)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Geboortedatum)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Geboortedatum)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Aandoening)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Aandoening)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hulpVerlenerId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hulpVerlenerId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.voorKind)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.voorKind)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.heeftVerwijzing)
-        </dt>
-        <dd class = "col-sm-8">
-            @Html.DisplayFor(model => model.heeftVerwijzing)
-        </dd>
-    </dl>
-    @if((Boolean)ViewData["checkIfAccountExist"] == false)
-    {
-    <dl class="row">
-        <a asp-controller="Aanmeld" asp-action="CreateNewAccount" asp-route-id="@Model.Id" class="btn btn-primary">Account aanmaken</a>
-    </dl>
-    }
-    @if(Model.voorKind == true)
-    {
-    <dl class="row">
-        <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id="@Model.Id" class="btn btn-primary">Ouder/voogd account aanmaken</a>
-    </dl>
-    }
+    <div>
+        <h4>Aanmeldgegevens</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Naam)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Naam)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Achternaam)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Achternaam)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Geboortedatum)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Geboortedatum)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Aandoening)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Aandoening)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.hulpVerlenerId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.hulpVerlenerId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.voorKind)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.voorKind)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.heeftVerwijzing)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.heeftVerwijzing)
+            </dd>
+        </dl>
+        @if ((Boolean)ViewData["checkIfAccountExist"] == false)
+        {
+            <dl class="row">
+                <a asp-controller="Aanmeld" asp-action="CreateNewAccount" asp-route-id="@Model.Id"
+                class="btn btn-primary">Account aanmaken</a>
+            </dl>
+        }
+        @if (Model.voorKind == true)
+        {
+            @if ((Boolean)ViewData["hasParent"] == false)
+            {
+                <dl class="row">
+                    <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id="@Model.Id"
+                class="btn btn-primary">Ouder/voogd account aanmaken</a>
+                </dl>
+            }
+        }
 
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </body>
+
 </html>

@@ -51,21 +51,21 @@ namespace wdpr_h.Controllers
             return View();
         }
 
-          [HttpGet]
-        public async Task<IActionResult> Create([Bind("Email,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Geboortedatum")] Client client, Guid id)
-        {
-        if (ModelState.IsValid)
-            {
-                client.OuderAccount = id;
-                var tijdelijkWachtwoord = GeneratePassword();
+        //   [HttpGet]
+        // public async Task<IActionResult> Create([Bind("Email,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Geboortedatum")] Client client, Guid id)
+        // {
+        // if (ModelState.IsValid)
+        //     {
+        //         client.OuderAccount = id;
+        //         var tijdelijkWachtwoord = GeneratePassword();
 
-                var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
-                // _context.Add(client);
-                // await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(client);
-        }
+        //         var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
+        //         // _context.Add(client);
+        //         // await _context.SaveChangesAsync();
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(client);
+        // }
 
         // POST: Client/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -76,9 +76,13 @@ namespace wdpr_h.Controllers
         {
             if (ModelState.IsValid)
             {
+                client.UserName = client.Email;
                 var tijdelijkWachtwoord = GeneratePassword();
                 var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
-                await _context.SaveChangesAsync();
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(client, "Client");
+                }  
                 return RedirectToAction(nameof(Index));
             }
             return View(client);
