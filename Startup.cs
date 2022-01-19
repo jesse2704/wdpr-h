@@ -33,6 +33,10 @@ namespace wdpr_h
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddRazorPages()
+       .AddRazorRuntimeCompilation();
+
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -126,7 +130,7 @@ namespace wdpr_h
             });
 
             //Maak custom rollen aan including een super user
-            //CreateRoles(serviceProvider).GetAwaiter().GetResult();
+            CreateRoles(serviceProvider).GetAwaiter().GetResult();
         }
 
         private async Task CreateRoles(IServiceProvider serviceProvider)
@@ -154,7 +158,7 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:UserEmail"],
             };
 
-             //Hier wordt de moderator aangemaakt
+            //Hier wordt de moderator aangemaakt
             var moderator_user = new Moderator
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
@@ -168,10 +172,10 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
                 Specialisme = Configuration["AppSettings:HulpverlenerSpecialisme"],
                 Naam = Configuration["AppSettings:HulpverlenerNaam"],
-                
+
             };
 
-             //Hier wordt de client aangemaakt
+            //Hier wordt de client aangemaakt
             var client_user = new Client
             {
                 UserName = Configuration["AppSettings:ClientName"],

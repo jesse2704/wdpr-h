@@ -33,6 +33,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Create">Aanmelden</a>
                         </li>
+                        @if (ViewContext.HttpContext.User.IsInRole("Hulpverlener"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Index">Aanmeld overzicht</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

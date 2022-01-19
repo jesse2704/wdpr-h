@@ -1,9 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using wdpr_h.Data;
 using wdpr_h.Models;
@@ -13,10 +13,12 @@ namespace wdpr_h.Controllers
     public class ClientController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ClientController(ApplicationDbContext context)
+        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Client
@@ -49,6 +51,22 @@ namespace wdpr_h.Controllers
             return View();
         }
 
+          [HttpGet]
+        public async Task<IActionResult> Create([Bind("Email,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Geboortedatum")] Client client, Guid id)
+        {
+        if (ModelState.IsValid)
+            {
+                client.OuderAccount = id;
+                var tijdelijkWachtwoord = GeneratePassword();
+
+                var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
+                // _context.Add(client);
+                // await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(client);
+        }
+
         // POST: Client/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -58,7 +76,8 @@ namespace wdpr_h.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
+                var tijdelijkWachtwoord = GeneratePassword();
+                var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -148,6 +167,56 @@ namespace wdpr_h.Controllers
         private bool ClientExists(string id)
         {
             return _context.Client.Any(e => e.Id == id);
+        }
+
+         [HttpGet]
+        public string GeneratePassword()
+        {
+            var options = _userManager.Options.Password;
+
+            int length = options.RequiredLength;
+
+            bool nonAlphanumeric = options.RequireNonAlphanumeric;
+            bool digit = options.RequireDigit;
+            bool lowercase = options.RequireLowercase;
+            bool uppercase = options.RequireUppercase;
+
+            StringBuilder password = new StringBuilder();
+            Random random = new Random();
+
+            while (password.Length < length)
+            {
+                char c = (char)random.Next(32, 126);
+
+                password.Append(c);
+
+                if (char.IsDigit(c))
+                    digit = false;
+                else if (char.IsLower(c))
+                    lowercase = false;
+                else if (char.IsUpper(c))
+                    uppercase = false;
+                else if (!char.IsLetterOrDigit(c))
+                    nonAlphanumeric = false;
+            }
+
+            if (nonAlphanumeric)
+                password.Append((char)random.Next(33, 48));
+            if (digit)
+                password.Append((char)random.Next(48, 58));
+            if (lowercase)
+                password.Append((char)random.Next(97, 123));
+            if (uppercase)
+                password.Append((char)random.Next(65, 91));
+
+            return password.ToString();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CreateParentAccount(Guid id)
+        {
+            ViewData["Guid"] = id;
+            return View("Create");
         }
     }
 }

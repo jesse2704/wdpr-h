@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using wdpr_h.Models;
 
 namespace wdpr_h.Areas.Identity.Pages.Account
 {
@@ -60,6 +61,23 @@ namespace wdpr_h.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [StringLength(15)]
+            public String Nicknaam { get; set; }
+            [Required]
+            public String LeeftijdsCategorie { get; set; }
+            [Required]
+            [StringLength(30)]
+            public String Naam { get; set; }
+            [Required]
+            [StringLength(30)]
+            public String Achternaam { get; set; }
+            [Required]
+            [DataType(DataType.Date)]
+            [MinimumAge(16, ErrorMessage = "Je moet 16 jaar of ouder zijn om een account aan te maken!")]
+            public DateTime Geboortedatum { get; set; }
+            public Boolean isKindAccount { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -74,10 +92,21 @@ namespace wdpr_h.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new Client
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Nicknaam = Input.Nicknaam,
+                    LeeftijdsCategorie = Input.LeeftijdsCategorie,
+                    Naam = Input.Naam,
+                    Achternaam = Input.Achternaam,
+                    isKindAccount = Input.isKindAccount
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "Client");
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
