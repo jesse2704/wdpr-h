@@ -22,6 +22,7 @@ namespace wdpr_h.Controllers
         // GET: Aanmeld
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.Aanmeld.ToListAsync());
         }
 
