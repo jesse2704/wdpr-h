@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PBVUqOc637AfUJ5LH4N9eqQbeB4fHOfxgYLQVJPbQuHsE3aLG+6XRdPUNM98SSW9m6qH26buEMZxP1GAdY8njA==",
+  "dgSpecHash": "OU4v8TzGJFuJNeOJAd706E9eBzgYOLbO1fhNEkr2FTwBUtj0zVeaui9SCxidoAKewPAqJubli76g1bTG4ckyqA==",
   "success": true,
-  "projectFilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
+  "projectFilePath": "/Users/jesseakoma/Documents/GitHub/wdpr-h/wdpr-h.csproj",
   "expectedPackageFiles": [
     "/Users/jesseakoma/.nuget/packages/fluentemail.core/3.0.0/fluentemail.core.3.0.0.nupkg.sha512",
     "/Users/jesseakoma/.nuget/packages/fluentemail.razor/3.0.0/fluentemail.razor.3.0.0.nupkg.sha512",

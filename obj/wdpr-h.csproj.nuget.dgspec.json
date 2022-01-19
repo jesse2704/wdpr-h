@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj": {}
+    "/Users/jesseakoma/Documents/GitHub/wdpr-h/wdpr-h.csproj": {}
   },
   "projects": {
-    "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj": {
+    "/Users/jesseakoma/Documents/GitHub/wdpr-h/wdpr-h.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
+        "projectUniqueName": "/Users/jesseakoma/Documents/GitHub/wdpr-h/wdpr-h.csproj",
         "projectName": "wdpr-h",
-        "projectPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/wdpr-h.csproj",
+        "projectPath": "/Users/jesseakoma/Documents/GitHub/wdpr-h/wdpr-h.csproj",
         "packagesPath": "/Users/jesseakoma/.nuget/packages/",
-        "outputPath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/",
+        "outputPath": "/Users/jesseakoma/Documents/GitHub/wdpr-h/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jesseakoma/.nuget/NuGet/NuGet.Config"
