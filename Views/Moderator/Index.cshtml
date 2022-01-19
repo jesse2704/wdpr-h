@@ -1,4 +1,4 @@
-@model IEnumerable<wdpr_h.Models.ModeratorViewModel>
+@model wdpr_h.Models.ModeratorViewModel
 
 @{
     Layout = "_Layout";
@@ -16,23 +16,27 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Hulpverleners)
+                Client naam:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Clients)
+                Client Email:
             </th>
-            
-            <th></th>
+            <th>
+                Wordt geholpen door:
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Clients) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Clients)
+                @Html.DisplayFor(modelItem => item.Naam)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Hulpverleners)
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id.Equals(modelItem => modelItem));
             </td>
             @* <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
