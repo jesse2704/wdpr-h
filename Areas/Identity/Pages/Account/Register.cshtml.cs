@@ -74,6 +74,9 @@ namespace wdpr_h.Areas.Identity.Pages.Account
             [StringLength(30)]
             public String Achternaam { get; set; }
             [Required]
+            [DataType(DataType.Date)]
+            [MinimumAge(16, ErrorMessage = "Je moet 16 jaar of ouder zijn om een account aan te maken!")]
+            public DateTime Geboortedatum { get; set; }
             public Boolean isKindAccount { get; set; }
         }
 
@@ -89,11 +92,16 @@ namespace wdpr_h.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Client 
-                { UserName = Input.Email, Email = Input.Email,
-                Nicknaam = Input.Nicknaam, LeeftijdsCategorie = Input.LeeftijdsCategorie,
-                Naam = Input.Naam, Achternaam = Input.Achternaam,
-                isKindAccount = Input.isKindAccount};
+                var user = new Client
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Nicknaam = Input.Nicknaam,
+                    LeeftijdsCategorie = Input.LeeftijdsCategorie,
+                    Naam = Input.Naam,
+                    Achternaam = Input.Achternaam,
+                    isKindAccount = Input.isKindAccount
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)

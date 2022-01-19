@@ -14,7 +14,7 @@
 <body>
 
 <div>
-    <h4>Aanmeld</h4>
+    <h4>Aanmeldgegevens</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -66,9 +66,19 @@
             @Html.DisplayFor(model => model.heeftVerwijzing)
         </dd>
     </dl>
+    @if((Boolean)ViewData["checkIfAccountExist"] == false)
+    {
     <dl class="row">
         <a asp-controller="Aanmeld" asp-action="CreateNewAccount" asp-route-id="@Model.Id" class="btn btn-primary">Account aanmaken</a>
     </dl>
+    }
+    @if(Model.voorKind == true)
+    {
+    <dl class="row">
+        <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id="@Model.Id" class="btn btn-primary">Ouder/voogd account aanmaken</a>
+    </dl>
+    }
+
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

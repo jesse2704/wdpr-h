@@ -17,6 +17,10 @@ namespace wdpr_h.Models
         [Required]
         [StringLength(30)]
         public String Achternaam { get; set; }
+        [Required] 
+        [DataType(DataType.Date)]
+        [MinimumAge(16, ErrorMessage = "Je moet 16 jaar of ouder zijn om een account aan te maken!")]
+        public DateTime Geboortedatum {get;set;}
         [Required]
         public Boolean isKindAccount {get;set;}
         public Guid OuderAccount {get;set;}

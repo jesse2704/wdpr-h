@@ -52,6 +52,9 @@ namespace wdpr_h.Controllers
 
             var aanmeld = await _context.Aanmeld
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+            ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
+            
             if (aanmeld == null)
             {
                 return NotFound();
@@ -184,7 +187,7 @@ namespace wdpr_h.Controllers
                 { UserName = targetAanmeld.Email, Email = targetAanmeld.Email,
                 Nicknaam = "New user", LeeftijdsCategorie = "Nog wijzigen",
                 Naam = targetAanmeld.Naam, Achternaam = targetAanmeld.Achternaam,
-                isKindAccount = targetAanmeld.voorKind};
+                isKindAccount = targetAanmeld.voorKind, Geboortedatum = targetAanmeld.Geboortedatum};
 
                 var result = await _userManager.CreateAsync(user, tijdelijkWachtwoord);
                 if (result.Succeeded)
