@@ -1,4 +1,4 @@
-@model IEnumerable<wdpr_h.Models.Moderator>
+@model IEnumerable<wdpr_h.Models.ModeratorViewModel>
 
 @{
     Layout = "_Layout";
@@ -16,10 +16,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AccessFailedCount)
+                @Html.DisplayNameFor(model => model.Hulpverleners)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AccessFailedCount)
+                @Html.DisplayNameFor(model => model.Clients)
             </th>
             
             <th></th>
@@ -29,10 +29,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                @Html.DisplayFor(modelItem => item.Clients)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AccessFailedCount)
+                @Html.DisplayFor(modelItem => item.Hulpverleners)
             </td>
             @* <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
