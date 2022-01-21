@@ -3,9 +3,6 @@
 @{
     Layout = "_Layout";
     var clientId = ViewData["getIdClient"];
-    string newUser = (string)TempData["newUser"];
-    var checkIfSet = String.IsNullOrEmpty(newUser);
-
 }
 
 <!DOCTYPE html>
@@ -106,10 +103,6 @@
                 <dl class="row">
                     <a class="btn btn-success" style="color: white">Ouder/voogd van heeft een account</a>
                 </dl>
-            }
-            @if (checkIfSet == true)
-            {
-            //Popup <div class='customAlert'>
             }
 
         }

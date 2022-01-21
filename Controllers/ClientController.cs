@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
 
@@ -14,11 +15,13 @@ namespace wdpr_h.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IToastNotification _toastNotification;
 
-        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification)
         {
             _context = context;
             _userManager = userManager;
+            _toastNotification = toastNotification;
         }
 
         // GET: Client
@@ -84,8 +87,9 @@ namespace wdpr_h.Controllers
                 {
                     await _userManager.AddToRoleAsync(client, "Client");
                 }  
-                TempData["newUser"] = true;
-                return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == client.Email).Id.ToString() });
+
+                _toastNotification.AddSuccessToastMessage("Client " + client.Naam + " is aangemaakt!");
+                return RedirectToAction("Index", "Aanmeld");
             }
             return View(client);
         }

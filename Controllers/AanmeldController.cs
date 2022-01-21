@@ -215,7 +215,8 @@ namespace wdpr_h.Controllers
                 //Send email with temp password
                 Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == targetAanmeld.hulpVerlenerId.ToString());
                 //SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
-                _toastNotification.AddInfoToastMessage("You got redirected");
+                _toastNotification.AddSuccessToastMessage("Client " + user.Naam + " is aangemaakt!");
+                var test = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString();
                 return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString() });
             }
             return View();
