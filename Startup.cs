@@ -40,7 +40,7 @@ namespace wdpr_h
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions()
             {
                 ProgressBar = false,
-                PositionClass = ToastPositions.BottomCenter
+                PositionClass = ToastPositions.BottomFullWidth
             });
 
 

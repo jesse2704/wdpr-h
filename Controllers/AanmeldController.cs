@@ -150,6 +150,7 @@ namespace wdpr_h.Controllers
                         throw;
                     }
                 }
+                _toastNotification.AddSuccessToastMessage("Client is aangepast");
                 return RedirectToAction(nameof(Index));
             }
             return View(aanmeld);
@@ -169,7 +170,7 @@ namespace wdpr_h.Controllers
             {
                 return NotFound();
             }
-
+            _toastNotification.AddSuccessToastMessage("Client is verwijderd");
             return View(aanmeld);
         }
 
