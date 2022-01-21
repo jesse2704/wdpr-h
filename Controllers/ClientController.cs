@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
 
@@ -14,11 +15,13 @@ namespace wdpr_h.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IToastNotification _toastNotification;
 
-        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification)
         {
             _context = context;
             _userManager = userManager;
+            _toastNotification = toastNotification;
         }
 
         // GET: Client
@@ -51,35 +54,51 @@ namespace wdpr_h.Controllers
             return View();
         }
 
-          [HttpGet]
-        public async Task<IActionResult> Create([Bind("Email,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Geboortedatum")] Client client, Guid id)
-        {
-        if (ModelState.IsValid)
-            {
-                client.OuderAccount = id;
-                var tijdelijkWachtwoord = GeneratePassword();
+        //   [HttpGet]
+        // public async Task<IActionResult> Create([Bind("Email,Nicknaam,LeeftijdsCategorie,Naam,Achternaam,Geboortedatum")] Client client, Guid id)
+        // {
+        // if (ModelState.IsValid)
+        //     {
+        //         client.OuderAccount = id;
+        //         var tijdelijkWachtwoord = GeneratePassword();
 
-                var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
-                // _context.Add(client);
-                // await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(client);
-        }
+        //         var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
+        //         // _context.Add(client);
+        //         // await _context.SaveChangesAsync();
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(client);
+        // }
 
         // POST: Client/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Client client)
+        public async Task<IActionResult> Create([Bind("Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,KindAccount,HulpverlenerId,Wachtwoord,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Client client)
         {
             if (ModelState.IsValid)
             {
+                
+                client.UserName = client.Email;
                 var tijdelijkWachtwoord = GeneratePassword();
+                   
                 var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (result.Succeeded)
+                {
+                    //Add role client to account
+                    await _userManager.AddToRoleAsync(client, "Parent");
+
+                    //Get Client account and Add parent account 
+                    var kindAccount = client.KindAccount.ToString();
+
+                    var targetClient = await _context.Client.Where(c => c.Id ==  kindAccount).SingleOrDefaultAsync();
+                    targetClient.OuderAccount = Guid.Parse(kindAccount);
+                    await _context.SaveChangesAsync();
+                }  
+
+                _toastNotification.AddSuccessToastMessage("Client " + client.Naam + " is aangemaakt!");
+                return RedirectToAction("Index", "Aanmeld");
             }
             return View(client);
         }
@@ -213,9 +232,11 @@ namespace wdpr_h.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateParentAccount(Guid id)
+        public async Task<IActionResult> CreateParentAccount(String id)
         {
-            ViewData["Guid"] = id;
+            var getClient = await _context.Client.Where(c => c.Email == id).SingleOrDefaultAsync();
+            var getClientId = getClient.Id;
+            ViewData["getChildAccountId"] = getClientId;
             return View("Create");
         }
     }

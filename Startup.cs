@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using wdpr_h.Models;
+using NToastNotify;
 
 namespace wdpr_h
 {
@@ -35,6 +36,12 @@ namespace wdpr_h
 
             services.AddRazorPages()
        .AddRazorRuntimeCompilation();
+
+            services.AddMvc().AddNToastNotifyToastr(new ToastrOptions()
+            {
+                ProgressBar = false,
+                PositionClass = ToastPositions.BottomFullWidth
+            });
 
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
@@ -121,6 +128,7 @@ namespace wdpr_h
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseNToastNotify();
 
             app.UseEndpoints(endpoints =>
             {
@@ -139,7 +147,7 @@ namespace wdpr_h
             //Initialiseer custom rollen
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
-            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener" };
+            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener", "Parent" };
             IdentityResult roleResult;
 
             foreach (var roleName in roleNames)

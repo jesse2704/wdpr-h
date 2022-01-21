@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
 
@@ -25,11 +26,13 @@ namespace wdpr_h.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly IToastNotification _toastNotification;
 
-        public AanmeldController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public AanmeldController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification)
         {
             _context = context;
             _userManager = userManager;
+            _toastNotification = toastNotification;
         }
 
         // GET: Aanmeld
@@ -53,7 +56,19 @@ namespace wdpr_h.Controllers
             var aanmeld = await _context.Aanmeld
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
+            var account = ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
+            if ((bool)account)
+            {
+                //var user = ViewData["GetAccount"] = _context.Client.Where(c => c.Email == aanmeld.Email).Single();
+                
+                ViewData["getIdClient"] = _context.Client.Where(c => c.Email == aanmeld.Email).SingleOrDefault().Id;
+                //ViewData["hasParent"] = _context.Client.Where(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000")).Any();
+            }
+            Boolean checkParent =  _context.Client.Where(c => c.Email == aanmeld.Email).Any(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000"));
+            ViewData["hasParent"] = checkParent;
+
+            
+            
             
             if (aanmeld == null)
             {
@@ -135,6 +150,7 @@ namespace wdpr_h.Controllers
                         throw;
                     }
                 }
+                _toastNotification.AddSuccessToastMessage("Client is aangepast");
                 return RedirectToAction(nameof(Index));
             }
             return View(aanmeld);
@@ -154,7 +170,7 @@ namespace wdpr_h.Controllers
             {
                 return NotFound();
             }
-
+            _toastNotification.AddSuccessToastMessage("Client is verwijderd");
             return View(aanmeld);
         }
 
@@ -200,8 +216,9 @@ namespace wdpr_h.Controllers
                 //Send email with temp password
                 Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == targetAanmeld.hulpVerlenerId.ToString());
                 //SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
-
-                return RedirectToAction(nameof(Index));
+                _toastNotification.AddSuccessToastMessage("Client " + user.Naam + " is aangemaakt!");
+                var test = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString();
+                return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString() });
             }
             return View();
         }
