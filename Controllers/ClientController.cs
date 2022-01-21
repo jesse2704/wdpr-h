@@ -84,6 +84,7 @@ namespace wdpr_h.Controllers
                 {
                     await _userManager.AddToRoleAsync(client, "Client");
                 }  
+                TempData["newUser"] = true;
                 return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == client.Email).Id.ToString() });
             }
             return View(client);

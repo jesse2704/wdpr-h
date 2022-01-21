@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
 
@@ -25,11 +26,13 @@ namespace wdpr_h.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        private readonly IToastNotification _toastNotification;
 
-        public AanmeldController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public AanmeldController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification)
         {
             _context = context;
             _userManager = userManager;
+            _toastNotification = toastNotification;
         }
 
         // GET: Aanmeld
@@ -212,7 +215,7 @@ namespace wdpr_h.Controllers
                 //Send email with temp password
                 Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == targetAanmeld.hulpVerlenerId.ToString());
                 //SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
-
+                _toastNotification.AddInfoToastMessage("You got redirected");
                 return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString() });
             }
             return View();

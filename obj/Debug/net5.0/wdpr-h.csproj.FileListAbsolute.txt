@@ -1011,3 +1011,10 @@
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/ref/wdpr-h.dll
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/wdpr-h.pdb
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeconfig.cache
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/System.Windows.Forms.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/AspNetCoreHero.ToastNotification.Views.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/AspNetCoreHero.ToastNotification.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/NToastNotify.Views.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/NToastNotify.dll

@@ -3,6 +3,9 @@
 @{
     Layout = "_Layout";
     var clientId = ViewData["getIdClient"];
+    string newUser = (string)TempData["newUser"];
+    var checkIfSet = String.IsNullOrEmpty(newUser);
+
 }
 
 <!DOCTYPE html>
@@ -12,9 +15,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    <script src="/js/site.js"></script>
 </head>
 
-<body>
+<body ng-controller="PlaylistsCtrl">
 
     <div>
         <h4>Aanmeldgegevens</h4>
@@ -76,7 +80,9 @@
                 class="btn btn-primary">Account aanmaken</a>
             </dl>
             <dl class="row">
-                <a class="btn btn-warning">Ouder/voogd account aanmaken</a>
+                <a class="btn btn-warning"
+                onclick="alert('Eerst moet er een account aangemaakt worden voor de client')">Ouder/voogd account
+                    aanmaken</a>
             </dl>
         }
         @if (Model.voorKind == true)
@@ -100,7 +106,10 @@
                 <dl class="row">
                     <a class="btn btn-success" style="color: white">Ouder/voogd van heeft een account</a>
                 </dl>
-
+            }
+            @if (checkIfSet == true)
+            {
+            //Popup <div class='customAlert'>
             }
 
         }
