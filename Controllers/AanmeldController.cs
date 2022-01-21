@@ -53,8 +53,19 @@ namespace wdpr_h.Controllers
             var aanmeld = await _context.Aanmeld
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
-            ViewData["hasParent"] = _context.Client.Where(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000")).Any();
+            var account = ViewData["checkIfAccountExist"] = _context.Client.Any(c => c.Email == aanmeld.Email);
+            if ((bool)account)
+            {
+                //var user = ViewData["GetAccount"] = _context.Client.Where(c => c.Email == aanmeld.Email).Single();
+                
+                ViewData["getIdClient"] = _context.Client.Where(c => c.Email == aanmeld.Email).SingleOrDefault().Id;
+                //ViewData["hasParent"] = _context.Client.Where(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000")).Any();
+            }
+            Boolean checkParent =  _context.Client.Where(c => c.Email == aanmeld.Email).Any(c => c.OuderAccount != Guid.Parse("00000000-0000-0000-0000-000000000000"));
+            ViewData["hasParent"] = checkParent;
+
+            
+            
             
             if (aanmeld == null)
             {
@@ -202,7 +213,7 @@ namespace wdpr_h.Controllers
                 Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == targetAanmeld.hulpVerlenerId.ToString());
                 //SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString() });
             }
             return View();
         }

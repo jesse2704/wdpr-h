@@ -76,6 +76,7 @@ namespace wdpr_h.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 client.UserName = client.Email;
                 var tijdelijkWachtwoord = GeneratePassword();
                 var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
@@ -83,7 +84,7 @@ namespace wdpr_h.Controllers
                 {
                     await _userManager.AddToRoleAsync(client, "Client");
                 }  
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == client.Email).Id.ToString() });
             }
             return View(client);
         }
@@ -217,9 +218,9 @@ namespace wdpr_h.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateParentAccount(Guid id)
+        public async Task<IActionResult> CreateParentAccount(String Id)
         {
-            ViewData["Guid"] = id;
+            ViewData["Guid"] = Id;
             return View("Create");
         }
     }

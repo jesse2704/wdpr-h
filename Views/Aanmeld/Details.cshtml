@@ -2,6 +2,7 @@
 
 @{
     Layout = "_Layout";
+    var clientId = ViewData["getIdClient"];
 }
 
 <!DOCTYPE html>
@@ -74,16 +75,34 @@
                 <a asp-controller="Aanmeld" asp-action="CreateNewAccount" asp-route-id="@Model.Id"
                 class="btn btn-primary">Account aanmaken</a>
             </dl>
+            <dl class="row">
+                <a class="btn btn-warning">Ouder/voogd account aanmaken</a>
+            </dl>
         }
         @if (Model.voorKind == true)
         {
-            @if ((Boolean)ViewData["hasParent"] == false)
+            @if ((Boolean)ViewData["hasParent"] == false && (Boolean)ViewData["checkIfAccountExist"] == true)
             {
                 <dl class="row">
-                    <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id="@Model.Id"
+                    <a class="btn btn-success" style="color: white;">Client heeft een account </a>
+                </dl>
+                <dl class="row">
+                    <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id=@clientId
                 class="btn btn-primary">Ouder/voogd account aanmaken</a>
                 </dl>
             }
+
+            @if ((Boolean)ViewData["hasParent"] == true && (Boolean)ViewData["checkIfAccountExist"] == true)
+            {
+                <dl class="row">
+                    <a class="btn btn-success" style="color: white;">Client heeft een account </a>
+                </dl>
+                <dl class="row">
+                    <a class="btn btn-success" style="color: white">Ouder/voogd van heeft een account</a>
+                </dl>
+
+            }
+
         }
 
     </div>
