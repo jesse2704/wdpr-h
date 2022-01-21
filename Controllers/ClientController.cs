@@ -75,17 +75,26 @@ namespace wdpr_h.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,HulpverlenerId,Wachtwoord,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Client client)
+        public async Task<IActionResult> Create([Bind("Nicknaam,LeeftijdsCategorie,Naam,Achternaam,isKindAccount,OuderAccount,KindAccount,HulpverlenerId,Wachtwoord,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Client client)
         {
             if (ModelState.IsValid)
             {
                 
                 client.UserName = client.Email;
                 var tijdelijkWachtwoord = GeneratePassword();
+                   
                 var result = await _userManager.CreateAsync(client, tijdelijkWachtwoord);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(client, "Client");
+                    //Add role client to account
+                    await _userManager.AddToRoleAsync(client, "Parent");
+
+                    //Get Client account and Add parent account 
+                    var kindAccount = client.KindAccount.ToString();
+
+                    var targetClient = await _context.Client.Where(c => c.Id ==  kindAccount).SingleOrDefaultAsync();
+                    targetClient.OuderAccount = Guid.Parse(kindAccount);
+                    await _context.SaveChangesAsync();
                 }  
 
                 _toastNotification.AddSuccessToastMessage("Client " + client.Naam + " is aangemaakt!");
@@ -223,9 +232,11 @@ namespace wdpr_h.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateParentAccount(String Id)
+        public async Task<IActionResult> CreateParentAccount(String id)
         {
-            ViewData["Guid"] = Id;
+            var getClient = await _context.Client.Where(c => c.Email == id).SingleOrDefaultAsync();
+            var getClientId = getClient.Id;
+            ViewData["getChildAccountId"] = getClientId;
             return View("Create");
         }
     }

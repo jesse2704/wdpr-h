@@ -345,6 +345,9 @@ namespace wdpr_h.Migrations
                     b.Property<Guid>("HulpverlenerId")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("KindAccount")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LeeftijdsCategorie")
                         .IsRequired()
                         .HasColumnType("TEXT");

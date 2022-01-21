@@ -53,6 +53,7 @@ namespace wdpr_h.Migrations
                     Geboortedatum = table.Column<DateTime>(type: "TEXT", nullable: true),
                     isKindAccount = table.Column<bool>(type: "INTEGER", nullable: true),
                     OuderAccount = table.Column<Guid>(type: "TEXT", nullable: true),
+                    KindAccount = table.Column<Guid>(type: "TEXT", nullable: true),
                     HulpverlenerId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Hulpverlener_Naam = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
                     Hulpverlener_Achternaam = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),

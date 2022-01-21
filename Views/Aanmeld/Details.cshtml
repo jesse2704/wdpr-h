@@ -90,7 +90,7 @@
                     <a class="btn btn-success" style="color: white;">Client heeft een account </a>
                 </dl>
                 <dl class="row">
-                    <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id=@clientId
+                    <a asp-controller="Client" asp-action="CreateParentAccount" asp-route-id=@Model.Email
                 class="btn btn-primary">Ouder/voogd account aanmaken</a>
                 </dl>
             }

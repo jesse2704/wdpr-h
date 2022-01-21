@@ -146,7 +146,7 @@ namespace wdpr_h
             //Initialiseer custom rollen
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
-            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener" };
+            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener", "Parent" };
             IdentityResult roleResult;
 
             foreach (var roleName in roleNames)

@@ -2,6 +2,7 @@
 
 @{
     Layout = "_Layout";
+    var childId = ViewData["getChildAccountId"].ToString();
 }
 
 <!DOCTYPE html>
@@ -53,8 +54,8 @@
                 </div>
                 <div class="form-group">
                     @* <label asp-for="OuderAccount" class="control-label"></label> *@
-                    <input asp-for="OuderAccount" class="form-control" value = '@ViewData["Guid"]' type="hidden"/>
-                    <span asp-validation-for="OuderAccount" class="text-danger"></span>
+                    <input asp-for="KindAccount" class="form-control" value = '@childId' type="hidden"/>
+                    <span asp-validation-for="KindAccount" class="text-danger"></span>
                 </div> 
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />

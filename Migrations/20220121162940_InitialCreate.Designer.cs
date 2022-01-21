@@ -9,7 +9,7 @@ using wdpr_h.Data;
 namespace wdpr_h.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220119145707_InitialCreate")]
+    [Migration("20220121162940_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -345,6 +345,9 @@ namespace wdpr_h.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("HulpverlenerId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("KindAccount")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LeeftijdsCategorie")
