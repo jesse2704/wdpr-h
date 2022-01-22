@@ -13566,57 +13566,6 @@
         }
       },
       {
-        "HashCode": -1666800174,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__NotyfViewComponentTagHelper",
-        "AssemblyName": "AspNetCoreHero.ToastNotification",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:notyf"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__NotyfViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "Notyf"
-        }
-      },
-      {
-        "HashCode": -629229832,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__ToastifyViewComponentTagHelper",
-        "AssemblyName": "AspNetCoreHero.ToastNotification",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:toastify"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__ToastifyViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "Toastify"
-        }
-      },
-      {
-        "HashCode": 74879787,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__NToastNotifyViewComponentTagHelper",
-        "AssemblyName": "NToastNotify",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:n-toast-notify"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__NToastNotifyViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "NToastNotify"
-        }
-      },
-      {
         "HashCode": 1342982883,
         "Kind": "Components.Bind",
         "Name": "Bind",
