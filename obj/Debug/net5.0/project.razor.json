@@ -15805,6 +15805,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Clienten.cshtml",
+      "TargetPath": "Views\\Moderator\\Clienten.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Chatrestrictie/Index.cshtml",
       "TargetPath": "Views\\Chatrestrictie\\Index.cshtml",
       "FileKind": "mvc"
@@ -15822,6 +15827,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/Edit.cshtml",
       "TargetPath": "Views\\Hulpverlener\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Hulpverleners.cshtml",
+      "TargetPath": "Views\\Moderator\\Hulpverleners.cshtml",
       "FileKind": "mvc"
     },
     {

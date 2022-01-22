@@ -40,6 +40,16 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Index">Aanmeld overzicht</a>
                             </li>
                         }
+                        @if (ViewContext.HttpContext.User.IsInRole("Hulpverlener"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Moderator" asp-action="Clienten">Clienten</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Moderator" asp-action="Hulpverleners">Hulpverleners</a>
+                            </li>
+
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ClientZelfhulpgroep" asp-action="IndexClient">Zelfhulpgroep</a>
                         </li>

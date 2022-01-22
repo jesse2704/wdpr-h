@@ -1,7 +1,11 @@
-@model wdpr_h.Models.Moderator
+@model wdpr_h.Models.ModeratorViewModel
 
 @{
-    Layout = null;
+    Layout = "_Layout";
+    var id = ViewData["id"].ToString();
+    var hulpverlener = Model.Hulpverleners.Where(h => h.Id == id).Single();
+    var hulpverlenerNaam = hulpverlener.Naam;
+    //var hulpverlener = Model.Hulpverleners.Where(h => h.Id == id.ToString()).SingleOrDefault();
 }
 
 <!DOCTYPE html>
@@ -14,25 +18,51 @@
 <body>
 
 <div>
-    <h4>Moderator</h4>
+    <h4>Clienten in behandeling bij @hulpverlenerNaam</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Naam)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Naam)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Wachtwoord)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Wachtwoord)
-        </dd>
-    </dl>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Naam:
+                </th>
+                <th>
+                    Achternaam:
+                </th>
+                <th>
+                    Email:
+                </th>
+                <th>
+                    Geboortedatum:
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Clients.Where(c => c.HulpverlenerId == Guid.Parse(id)))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Naam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Achternaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Geboortedatum)
+                    </td>
+
+                <td>
+                        @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | *@
+                        @* <a asp-action="Details" asp-route-id="@item.Id">Details</a> *@
+                        @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+                </tr>
+            }
+        </tbody>
+    </table>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
 </body>

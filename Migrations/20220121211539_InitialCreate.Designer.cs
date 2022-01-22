@@ -9,7 +9,7 @@ using wdpr_h.Data;
 namespace wdpr_h.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220121175409_InitialCreate")]
+    [Migration("20220121211539_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

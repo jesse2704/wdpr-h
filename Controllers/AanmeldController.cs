@@ -203,7 +203,7 @@ namespace wdpr_h.Controllers
                 { UserName = targetAanmeld.Email, Email = targetAanmeld.Email,
                 Nicknaam = "New user", LeeftijdsCategorie = "Nog wijzigen",
                 Naam = targetAanmeld.Naam, Achternaam = targetAanmeld.Achternaam,
-                isKindAccount = targetAanmeld.voorKind, Geboortedatum = targetAanmeld.Geboortedatum};
+                isKindAccount = targetAanmeld.voorKind, Geboortedatum = targetAanmeld.Geboortedatum, HulpverlenerId = targetAanmeld.hulpVerlenerId};
 
                 var result = await _userManager.CreateAsync(user, tijdelijkWachtwoord);
                 if (result.Succeeded)

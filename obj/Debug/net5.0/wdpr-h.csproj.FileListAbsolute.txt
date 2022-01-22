@@ -190,11 +190,6 @@
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Details.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Edit.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Zelfhulpgroep/Index.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Create.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Delete.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Details.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Edit.cshtml.g.cs
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Index.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Create.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Delete.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Chatrestrictie/Details.cshtml.g.cs
@@ -1240,3 +1235,10 @@ C:/Users/jesse/Documents/School/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeco
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/NToastNotify.Views.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/NToastNotify.dll
 >>>>>>> HulpverlenerPanelReq
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Create.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Delete.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Details.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Edit.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Index.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Clienten.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Hulpverleners.cshtml.g.cs
