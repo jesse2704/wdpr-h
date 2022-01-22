@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace wdpr_h.Models
 {
@@ -16,6 +17,7 @@ namespace wdpr_h.Models
         [StringLength(25)]
         public String Achternaam {get;set;}
         [Required] 
+        [DataType(DataType.Date)]
         [MinimumAge(16, ErrorMessage = "Je moet 16 jaar of ouder zijn om een account aan te maken!")]
         public DateTime Geboortedatum {get;set;}
         [Required]
@@ -28,6 +30,7 @@ namespace wdpr_h.Models
         public String Email {get;set;}
         [Required]
         [Display(Name = "Hulpverlener")]
+        [HiddenInput(DisplayValue = false)]
         public Guid hulpVerlenerId {get;set;}
         [Display(Name = "Account voor uw kind?")]
         public Boolean voorKind {get;set;}

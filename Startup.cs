@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using wdpr_h.Models;
+using NToastNotify;
 
 namespace wdpr_h
 {
@@ -32,6 +33,16 @@ namespace wdpr_h
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddRazorPages()
+       .AddRazorRuntimeCompilation();
+
+            services.AddMvc().AddNToastNotifyToastr(new ToastrOptions()
+            {
+                ProgressBar = false,
+                PositionClass = ToastPositions.BottomFullWidth
+            });
+
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
@@ -58,6 +69,7 @@ namespace wdpr_h
                     policy => policy.RequireRole("Client"));
 
             });
+            //services.AddRazorRuntimeCompilation();
 
             services.Configure<IdentityOptions>(options =>
     {
@@ -116,6 +128,7 @@ namespace wdpr_h
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseNToastNotify();
 
             app.UseEndpoints(endpoints =>
             {
@@ -126,7 +139,7 @@ namespace wdpr_h
             });
 
             //Maak custom rollen aan including een super user
-            //CreateRoles(serviceProvider).GetAwaiter().GetResult();
+            CreateRoles(serviceProvider).GetAwaiter().GetResult();
         }
 
         private async Task CreateRoles(IServiceProvider serviceProvider)
@@ -134,7 +147,7 @@ namespace wdpr_h
             //Initialiseer custom rollen
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
-            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener" };
+            string[] roleNames = { "Admin", "Moderator", "Client", "Hulpverlener", "Parent" };
             IdentityResult roleResult;
 
             foreach (var roleName in roleNames)
@@ -154,7 +167,7 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:UserEmail"],
             };
 
-             //Hier wordt de moderator aangemaakt
+            //Hier wordt de moderator aangemaakt
             var moderator_user = new Moderator
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
@@ -168,10 +181,10 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
                 Specialisme = Configuration["AppSettings:HulpverlenerSpecialisme"],
                 Naam = Configuration["AppSettings:HulpverlenerNaam"],
-                
+
             };
 
-             //Hier wordt de client aangemaakt
+            //Hier wordt de client aangemaakt
             var client_user = new Client
             {
                 UserName = Configuration["AppSettings:ClientName"],

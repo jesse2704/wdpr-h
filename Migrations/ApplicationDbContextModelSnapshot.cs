@@ -339,8 +339,14 @@ namespace wdpr_h.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("HulpverlenerId")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("Geboortedatum")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("HulpverlenerId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("KindAccount")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LeeftijdsCategorie")
                         .IsRequired()
@@ -357,10 +363,6 @@ namespace wdpr_h.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("OuderAccount")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Wachtwoord")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("isKindAccount")
@@ -393,8 +395,7 @@ namespace wdpr_h.Migrations
                     b.Property<string>("Wachtwoord")
                         .IsRequired()
                         .HasMaxLength(30)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("Hulpverlener_Wachtwoord");
+                        .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Hulpverlener");
                 });
