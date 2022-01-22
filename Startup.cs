@@ -168,7 +168,7 @@ namespace wdpr_h
             };
 
             //Hier wordt de moderator aangemaakt
-            var moderator_user = new Moderator
+            var moderator_user = new Moderator()
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
                 Email = Configuration["AppSettings:ModeratorEmail"],

@@ -153,5 +153,23 @@ namespace wdpr_h.Controllers
         {
             return _context.Moderator.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> Clienten()
+        {
+            ModeratorViewModel modelMod = new ModeratorViewModel();
+            modelMod.Hulpverleners = await _context.Hulpverlener.ToListAsync();
+            modelMod.Clients = await _context.Client.ToListAsync();
+            
+            return View(modelMod);
+        }
+
+        public async Task<IActionResult> Hulpverleners()
+        {
+            ModeratorViewModel modelMod = new ModeratorViewModel();
+            modelMod.Hulpverleners = await _context.Hulpverlener.ToListAsync();
+            modelMod.Clients = await _context.Client.ToListAsync();
+            
+            return View(modelMod);
+        }
     }
 }
