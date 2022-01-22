@@ -30,6 +30,7 @@ namespace wdpr_h.Controllers
         }
 
         // GET: Moderator/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -37,14 +38,17 @@ namespace wdpr_h.Controllers
                 return NotFound();
             }
 
-            var moderator = await _context.Moderator
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (moderator == null)
+            var hulpverlener = new ModeratorViewModel();
+            hulpverlener.Hulpverleners = _context.Hulpverlener.ToList();
+            hulpverlener.Clients = _context.Client.ToList();
+            
+            if (hulpverlener == null)
             {
                 return NotFound();
             }
 
-            return View(moderator);
+            ViewData["id"] = id;
+            return View(hulpverlener);
         }
 
         // GET: Moderator/Create

@@ -56,6 +56,7 @@ namespace wdpr_h
             services.AddIdentityCore<Moderator>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
             services.AddAuthorization(options =>
             {
@@ -172,6 +173,7 @@ namespace wdpr_h
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
                 Email = Configuration["AppSettings:ModeratorEmail"],
+                Wachtwoord = "#1Geheim"
             };
 
             //Hier wordt de hulpverlener aangemaakt
@@ -189,6 +191,7 @@ namespace wdpr_h
             {
                 UserName = Configuration["AppSettings:ClientName"],
                 Email = Configuration["AppSettings:ClientEmail"],
+                HulpverlenerId = Guid.Parse(hulpverlener_user.Id),
             };
 
             //Ensure you have these values in your appsettings.json file

@@ -29,7 +29,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Clients)
+            @foreach (var item in Model.Clients.Where(c => c.isKindAccount == true))
             {
                 <tr>
                     <td>
@@ -43,50 +43,14 @@
                             var uitslag = item.HulpverlenerId;
                             var hulpverlener = Model.Hulpverleners.Where(h => h.Id == uitslag.ToString()).SingleOrDefault();
                         }
-                        @if (hulpverlener.Naam == null)
-                        {
-                            hulpverlener.Naam = "Geen naam";
-                        }
-                        @hulpverlener.Naam
+                        
+                        @hulpverlener.Naam - @hulpverlener.Achternaam
                     </td>
                     @* <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </td> *@
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Hulpverlener:
-                </th>
-                <th>
-                    Email:
-                </th>
-                <th>
-                    Optie:
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Hulpverleners)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Naam)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                <td>
-                        @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | *@
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
                 </tr>
             }
         </tbody>

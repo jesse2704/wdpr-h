@@ -29,7 +29,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Clients)
+            @foreach (var item in Model.Clients.Where(c => c.isKindAccount == true))
             {
                 <tr>
                     <td>
@@ -43,10 +43,7 @@
                             var uitslag = item.HulpverlenerId;
                             var hulpverlener = Model.Hulpverleners.Where(h => h.Id == uitslag.ToString()).SingleOrDefault();
                         }
-                        @if (hulpverlener.Naam == null)
-                        {
-                            hulpverlener.Naam = "Geen naam";
-                        }
+                        
                         @hulpverlener.Naam
                     </td>
                     @* <td>
