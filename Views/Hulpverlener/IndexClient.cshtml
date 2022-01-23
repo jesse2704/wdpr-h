@@ -1,0 +1,77 @@
+@model IEnumerable<Hulpverlener>
+@using Microsoft.AspNetCore.Identity
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+
+    <form action="/Hulpverlener/IndexClient" method="get">
+        <label for="Naam">Zoek op specialisme en naam:</label>
+        <input type="text" id="Naam" name="zoek">
+        <input hidden type="text" name="sorteer" value='@ViewData["sorteer"]'>
+        <input type="submit" value="Zoek!">
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Naam
+                    @if ((string)ViewData["sorteer"] == "naam_oplopend")
+                    {
+                        <a asp-controller="Hulpverlener" asp-action="IndexClient"
+                        asp-route-sorteer="naam_aflopend">↓</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Hulpverlener" asp-action="IndexClient"
+                        asp-route-sorteer="naam_oplopend">↑</a>
+                    }
+                </th>
+                <th>
+                    Achternaam
+                </th>
+                <th>
+                    Specialisme
+                </th>
+                <th>
+                    Email
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Naam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Achternaam)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specialisme)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>

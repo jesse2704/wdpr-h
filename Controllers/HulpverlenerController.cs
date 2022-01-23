@@ -149,5 +149,43 @@ namespace wdpr_h.Controllers
         {
             return _context.Hulpverlener.Any(e => e.Id == id);
         }
+
+         public IActionResult IndexClient(string sorteer,string zoek, int pagina)
+        {
+            if (sorteer == null) sorteer = "naam_oplopend";
+            ViewData["sorteer"] = sorteer;
+            ViewData["pagina"] = pagina;
+            ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Hulpverlener.Count();
+            ViewData["heeftVorige"] = pagina > 0;
+
+                var hulpverleners = _context.Hulpverlener;
+                return View(Pagineer(
+                                    Zoek(
+                                        Sorteer(hulpverleners, sorteer)
+                                        , zoek)
+                                    , pagina, 10)
+                            .ToList());
+        }
+        public IQueryable<Hulpverlener> Sorteer(IQueryable<Hulpverlener> lijst, string sorteer)
+        {
+
+            if (sorteer == "naam_oplopend") return lijst.OrderBy(z => z.Naam.ToLower());
+                else 
+                return lijst.OrderByDescending(h => h.Naam);
+        
+        }
+        public  IQueryable<Hulpverlener> Zoek(IQueryable<Hulpverlener> lijst, string zoek)
+        {
+            if(zoek == null) return lijst;
+                else
+
+            return lijst.Where(z => z.Specialisme.ToLower().Contains(zoek.ToLower()) || z.Naam.ToLower().Contains(zoek.ToLower()));
+        }
+        public  IQueryable<Hulpverlener> Pagineer(IQueryable<Hulpverlener> lijst, int pagina, int aantal)
+        {
+            if (pagina < 0) pagina = 0;
+
+            return lijst.Skip(pagina * aantal).Take(aantal);
+        }
     }
 }

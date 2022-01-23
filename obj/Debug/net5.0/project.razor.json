@@ -15920,6 +15920,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/IndexClient.cshtml",
+      "TargetPath": "Views\\Hulpverlener\\IndexClient.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Create.cshtml",
       "TargetPath": "Views\\Moderator\\Create.cshtml",
       "FileKind": "mvc"

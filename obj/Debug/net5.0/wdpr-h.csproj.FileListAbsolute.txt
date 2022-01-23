@@ -1244,3 +1244,4 @@ C:/Users/jesse/Documents/School/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeco
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Moderator/Hulpverleners.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Ortopedagoog.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Klachtenprocedures.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/IndexClient.cshtml.g.cs
