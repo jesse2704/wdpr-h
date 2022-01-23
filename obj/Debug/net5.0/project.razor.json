@@ -15685,6 +15685,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Home/Klachtenprocedures.cshtml",
+      "TargetPath": "Views\\Home\\Klachtenprocedures.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Moderator/Edit.cshtml",
       "TargetPath": "Views\\Moderator\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15757,6 +15762,11 @@
     {
       "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Hulpverlener/Details.cshtml",
       "TargetPath": "Views\\Hulpverlener\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/Views/Home/Ortopedagoog.cshtml",
+      "TargetPath": "Views\\Home\\Ortopedagoog.cshtml",
       "FileKind": "mvc"
     },
     {

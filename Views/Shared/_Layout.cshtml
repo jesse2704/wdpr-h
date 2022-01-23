@@ -21,6 +21,8 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        @if (!ViewContext.HttpContext.User.IsInRole("Hulpverlener") && !ViewContext.HttpContext.User.IsInRole("Moderator"))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -32,15 +34,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Overons">Over ons</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Create">Aanmelden</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Ortopedagoog">Ons team</a>
                         </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Create">Aanmelden voor intake</a>
+                        </li>
+                        }
                         @if (ViewContext.HttpContext.User.IsInRole("Hulpverlener"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Aanmeld" asp-action="Index">Aanmeld overzicht</a>
                             </li>
                         }
-                        @if (ViewContext.HttpContext.User.IsInRole("Hulpverlener"))
+                        @if (ViewContext.HttpContext.User.IsInRole("Moderator"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Moderator" asp-action="Clienten">Clienten</a>
@@ -50,9 +57,12 @@
                             </li>
 
                         }
+                        @if (ViewContext.HttpContext.User.IsInRole("Client"))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ClientZelfhulpgroep" asp-action="IndexClient">Zelfhulpgroep</a>
                         </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -67,7 +77,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; <b>2022 - ZMDH</b> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; <b>2022 - ZMDH</b> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> - 
+            <a asp-area="" asp-controller="Home" asp-action="Klachtenprocedures">Klachtenprocedures</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

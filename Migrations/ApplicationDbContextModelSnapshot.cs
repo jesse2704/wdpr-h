@@ -328,6 +328,29 @@ namespace wdpr_h.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Zelfhulpgroep");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11f8e6e2-8220-4334-9087-58d68bdd274f"),
+                            LeeftijdsCategorie = "18",
+                            Onderwerp = "Autisme",
+                            Titel = "Groep 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("ba9b51f1-04f8-494e-9838-068f0216cfd7"),
+                            LeeftijdsCategorie = "17",
+                            Onderwerp = "Depressie",
+                            Titel = "Groep 2"
+                        },
+                        new
+                        {
+                            Id = new Guid("1a5c2dda-c34c-4913-8fad-f0f84c29652d"),
+                            LeeftijdsCategorie = "16",
+                            Onderwerp = "Hooggevoeligheid",
+                            Titel = "Groep 3"
+                        });
                 });
 
             modelBuilder.Entity("wdpr_h.Models.Client", b =>
@@ -405,13 +428,11 @@ namespace wdpr_h.Migrations
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
                     b.Property<string>("Naam")
-                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("TEXT")
                         .HasColumnName("Moderator_Naam");
 
                     b.Property<string>("Wachtwoord")
-                        .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("TEXT")
                         .HasColumnName("Moderator_Wachtwoord");

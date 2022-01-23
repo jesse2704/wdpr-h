@@ -23,8 +23,6 @@ namespace wdpr_h.Controllers
         {
             return View();
         }
-
-        [Authorize(Roles = "Client")]
         public IActionResult Privacy()
         {
             return View();
@@ -34,6 +32,17 @@ namespace wdpr_h.Controllers
         {
             return View();
         }
+
+        public IActionResult Ortopedagoog()
+        {
+            return View();
+        }
+        public IActionResult Klachtenprocedures()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

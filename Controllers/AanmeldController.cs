@@ -46,6 +46,7 @@ namespace wdpr_h.Controllers
         }
 
         // GET: Aanmeld/Details/5
+        [Authorize(Roles = "Hulpverlener")]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -99,12 +100,14 @@ namespace wdpr_h.Controllers
                 aanmeld.Id = Guid.NewGuid();
                 _context.Add(aanmeld);
                 await _context.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage("Succesvol aangemeld");
                 return RedirectToAction(nameof(Index));
             }
             return View(aanmeld);
         }
 
         // GET: Aanmeld/Edit/5
+        [Authorize(Roles = "Hulpverlener")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -157,6 +160,7 @@ namespace wdpr_h.Controllers
         }
 
         // GET: Aanmeld/Delete/5
+        [Authorize(Roles = "Hulpverlener")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -191,6 +195,7 @@ namespace wdpr_h.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Hulpverlener")]
         public async Task<IActionResult> CreateNewAccount(Guid id)
         {
             if (ModelState.IsValid)
@@ -215,7 +220,7 @@ namespace wdpr_h.Controllers
                 
                 //Send email with temp password
                 Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == targetAanmeld.hulpVerlenerId.ToString());
-                //SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
+                SendMail(hulpverlener.Naam, targetAanmeld.Email, targetAanmeld.Naam, tijdelijkWachtwoord, hulpverlener.Email);
                 _toastNotification.AddSuccessToastMessage("Client " + user.Naam + " is aangemaakt!");
                 var test = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString();
                 return RedirectToAction(nameof(Details), new { id = _context.Aanmeld.Single(u => u.Email == user.Email).Id.ToString() });

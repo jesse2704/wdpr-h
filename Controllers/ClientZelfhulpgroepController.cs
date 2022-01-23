@@ -4,9 +4,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
 
@@ -15,10 +17,14 @@ namespace wdpr_h.Controllers
     public class ClientZelfhulpgroepController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IToastNotification _toastNotification;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ClientZelfhulpgroepController(ApplicationDbContext context)
+        public ClientZelfhulpgroepController(ApplicationDbContext context, IToastNotification toastNotification, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _toastNotification = toastNotification;
+            _userManager = userManager;
         }
 
         // GET: ClientZelfhulpgroep
@@ -27,7 +33,8 @@ namespace wdpr_h.Controllers
             return View(await _context.ClientZelfhulpgroep.ToListAsync());
         }
 
-        public async Task<IActionResult> IndexClient(string sorteer,string zoek, int pagina)
+        [Authorize(Roles = "Client")]
+        public IActionResult IndexClient(string sorteer,string zoek, int pagina)
         {
             if (sorteer == null) sorteer = "naam_oplopend";
             ViewData["sorteer"] = sorteer;
@@ -35,6 +42,8 @@ namespace wdpr_h.Controllers
             ViewData["heeftVolgende"] = (pagina + 1) * 10  < _context.Zelfhulpgroep.Count();
             ViewData["heeftVorige"] = pagina > 0;
             ViewData["clientZelfhulpgroepList"] = _context.ClientZelfhulpgroep.ToList();
+            ViewData["loggedUser"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["clientGroep"] = _context.ClientZelfhulpgroep.ToList();
 
                 var zelfhulpgroepList = _context.Zelfhulpgroep;
                 return View(Pagineer(
@@ -43,15 +52,6 @@ namespace wdpr_h.Controllers
                                         , zoek)
                                     , pagina, 10)
                             .ToList());
-
-            //ClientZelfhulpgroepViewModel clientZelfhulpgroepViewModel = new ClientZelfhulpgroepViewModel();
-
-
-            //clientZelfhulpgroepViewModel.ZelfhulpgroepList = _context.Zelfhulpgroep.ToList();
-            //clientZelfhulpgroepViewModel.ClientZelfhulpgroep = _context.ClientZelfhulpgroep.ToList();
-
-            //return View(await Pagineer(Zoek(Sorteer(clientZelfhulpgroepViewModel, sorteer),  zoek), pagina, 10).ToListAsync());
-            //return View(clientZelfhulpgroepViewModel);
         }
         public IQueryable<Zelfhulpgroep> Sorteer(IQueryable<Zelfhulpgroep> lijst, string sorteer)
         {
@@ -208,6 +208,9 @@ namespace wdpr_h.Controllers
             //Haal de user GUID op
             var userId =  User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+            //Check of je al bent aangemeld bij specifieke groep
+            var checkIfExist = _context.ClientZelfhulpgroep.Where(c => c.IdGroep == id).Any(c => c.IdClient == Guid.Parse(userId)); 
+
             //Voeg nieuwe client toe met bijbehorende gegevens
             ClientZelfhulpgroep newClientZelfhulpgroep = new ClientZelfhulpgroep();
 
@@ -217,8 +220,8 @@ namespace wdpr_h.Controllers
             newClientZelfhulpgroep.IdGroep = id;
             _context.ClientZelfhulpgroep.Add(newClientZelfhulpgroep);
             await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(Index));
+            _toastNotification.AddSuccessToastMessage("Succesvol aangemeld");
+            return RedirectToAction(nameof(IndexClient));
         }
     }
 }

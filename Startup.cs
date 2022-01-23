@@ -173,7 +173,7 @@ namespace wdpr_h
             {
                 UserName = Configuration["AppSettings:ModeratorName"],
                 Email = Configuration["AppSettings:ModeratorEmail"],
-                Wachtwoord = "#1Geheim"
+                Wachtwoord = "#1Geheim",
             };
 
             //Hier wordt de hulpverlener aangemaakt
@@ -183,6 +183,19 @@ namespace wdpr_h
                 Email = Configuration["AppSettings:HulpverlenerEmail"],
                 Specialisme = Configuration["AppSettings:HulpverlenerSpecialisme"],
                 Naam = Configuration["AppSettings:HulpverlenerNaam"],
+                Achternaam = Configuration["AppSettings:HulpverlenerAchternaam"],
+
+
+            };
+
+              //Hier wordt de hulpverlener aangemaakt
+            var hulpverlener_user2 = new Hulpverlener()
+            {
+                UserName = Configuration["AppSettings:HulpverlenerName2"],
+                Email = Configuration["AppSettings:HulpverlenerEmail2"],
+                Specialisme = Configuration["AppSettings:HulpverlenerSpecialisme2"],
+                Naam = Configuration["AppSettings:HulpverlenerNaam2"],
+                Achternaam = Configuration["AppSettings:HulpverlenerAchternaam2"],
 
             };
 
@@ -192,7 +205,28 @@ namespace wdpr_h
                 UserName = Configuration["AppSettings:ClientName"],
                 Email = Configuration["AppSettings:ClientEmail"],
                 HulpverlenerId = Guid.Parse(hulpverlener_user.Id),
+                Nicknaam = Configuration["AppSettings:ClientNickname"],
+                LeeftijdsCategorie = Configuration["AppSettings:ClientLeeftijdsCategorie"],
+                Naam = Configuration["AppSettings:ClientName"],
+                Achternaam = Configuration["AppSettings:ClientAchternaam"],
+                Geboortedatum = DateTime.Parse(Configuration["AppSettings:ClientGeboortedatum"]),
+                isKindAccount = Boolean.Parse(Configuration["AppSettings:ClientIsKindAccount"]),
             };
+
+              //Hier wordt de client aangemaakt
+            var client_user2 = new Client
+            {
+                UserName = Configuration["AppSettings:ClientName2"],
+                Email = Configuration["AppSettings:ClientEmail2"],
+                HulpverlenerId = Guid.Parse(hulpverlener_user2.Id),
+                Nicknaam = Configuration["AppSettings:ClientNickname2"],
+                LeeftijdsCategorie = Configuration["AppSettings:ClientLeeftijdsCategorie2"],
+                Naam = Configuration["AppSettings:ClientName2"],
+                Achternaam = Configuration["AppSettings:ClientAchternaam2"],
+                Geboortedatum = DateTime.Parse(Configuration["AppSettings:ClientGeboortedatum2"]),
+                isKindAccount = Boolean.Parse(Configuration["AppSettings:ClientIsKindAccount2"]),
+            };
+
 
             //Ensure you have these values in your appsettings.json file
             string userPWD = Configuration["AppSettings:UserPassword"];
@@ -200,7 +234,9 @@ namespace wdpr_h
             var _user = await UserManager.FindByEmailAsync(Configuration["AppSettings:AdminUserEmail"]);
             var _moderator = await UserManager.FindByEmailAsync(Configuration["AppSettings:ModeratorEmail"]);
             var _hulpverlener = await UserManager.FindByEmailAsync(Configuration["AppSettings:HulpverlenerEmail"]);
+            var _hulpverlener2 = await UserManager.FindByEmailAsync(Configuration["AppSettings:HulpverlenerEmail2"]);
             var _client = await UserManager.FindByEmailAsync(Configuration["AppSettings:ClientEmail"]);
+            var _client2 = await UserManager.FindByEmailAsync(Configuration["AppSettings:ClientEmail2"]);
 
             if (_user == null)
             {
@@ -235,6 +271,17 @@ namespace wdpr_h
                 }
             }
 
+            if (_hulpverlener2 == null)
+            {
+                var createHulpverlenerUser = await UserManager.CreateAsync(hulpverlener_user2, userPWD);
+                if (createHulpverlenerUser.Succeeded)
+                {
+                    //here we tie the new user to the role
+                    await UserManager.AddToRoleAsync(hulpverlener_user2, "Hulpverlener");
+
+                }
+            }
+
             if (_client == null)
             {
                 var createClientUser = await UserManager.CreateAsync(client_user, userPWD);
@@ -242,6 +289,16 @@ namespace wdpr_h
                 {
                     //here we tie the new user to the role
                     await UserManager.AddToRoleAsync(client_user, "Client");
+
+                }
+            }
+            if (_client2 == null)
+            {
+                var createClientUser = await UserManager.CreateAsync(client_user2, userPWD);
+                if (createClientUser.Succeeded)
+                {
+                    //here we tie the new user to the role
+                    await UserManager.AddToRoleAsync(client_user2, "Client");
 
                 }
             }

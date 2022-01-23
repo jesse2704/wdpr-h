@@ -17,7 +17,7 @@
 
     <h4>Aanmelden voor intake</h4>
     <hr />
-    <div class="row">
+    <div class="container container-table">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -49,7 +49,7 @@
                 
                 <div class="form-group">
                     <label asp-for="Aanmeld.hulpVerlenerId" class="control-label"></label>
-                    <select class="form-select" asp-for="Aanmeld.hulpVerlenerId" class="form-control">
+                    <select class="form-select form-select-lg mb-3" asp-for="Aanmeld.hulpVerlenerId" class="form-control">
                         <option selected>Selecteer een hulpverlener</option>
                         @foreach(var item in Model.Hulpverleners)
                         {
