@@ -14,28 +14,41 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using wdpr_h.Models;
 using NToastNotify;
+using wdpr_h.Services;
 
 namespace wdpr_h
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
+            Environment = env;
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+        {
+
+            if (Environment.IsDevelopment())
+            {  
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+            }
+            else
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection"));
+            }
+        });
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddRazorPages()
-       .AddRazorRuntimeCompilation();
+            .AddRazorRuntimeCompilation();
 
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions()
             {
@@ -43,6 +56,8 @@ namespace wdpr_h
                 PositionClass = ToastPositions.BottomFullWidth
             });
 
+            //Added Mail service
+            services.AddTransient<IMailService, SendGridMailService>();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
@@ -70,7 +85,6 @@ namespace wdpr_h
                     policy => policy.RequireRole("Client"));
 
             });
-            //services.AddRazorRuntimeCompilation();
 
             services.Configure<IdentityOptions>(options =>
     {
@@ -188,7 +202,7 @@ namespace wdpr_h
 
             };
 
-              //Hier wordt de hulpverlener aangemaakt
+            //Hier wordt de hulpverlener aangemaakt
             var hulpverlener_user2 = new Hulpverlener()
             {
                 UserName = Configuration["AppSettings:HulpverlenerName2"],
@@ -213,7 +227,7 @@ namespace wdpr_h
                 isKindAccount = Boolean.Parse(Configuration["AppSettings:ClientIsKindAccount"]),
             };
 
-              //Hier wordt de client aangemaakt
+            //Hier wordt de client aangemaakt
             var client_user2 = new Client
             {
                 UserName = Configuration["AppSettings:ClientName2"],

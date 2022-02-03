@@ -332,21 +332,21 @@ namespace wdpr_h.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("11f8e6e2-8220-4334-9087-58d68bdd274f"),
+                            Id = new Guid("1c48f1cb-5757-4946-b1e0-7006ae6a3f37"),
                             LeeftijdsCategorie = "18",
                             Onderwerp = "Autisme",
                             Titel = "Groep 1"
                         },
                         new
                         {
-                            Id = new Guid("ba9b51f1-04f8-494e-9838-068f0216cfd7"),
+                            Id = new Guid("e7139336-1725-41d1-84b7-5eb7c2f3faac"),
                             LeeftijdsCategorie = "17",
                             Onderwerp = "Depressie",
                             Titel = "Groep 2"
                         },
                         new
                         {
-                            Id = new Guid("1a5c2dda-c34c-4913-8fad-f0f84c29652d"),
+                            Id = new Guid("64ff766c-caf4-49b3-828e-a409a50a4027"),
                             LeeftijdsCategorie = "16",
                             Onderwerp = "Hooggevoeligheid",
                             Titel = "Groep 3"

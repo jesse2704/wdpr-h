@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1238301c-4e2b-4483-94d6-2be988cda74d/resourceGroups/appsvc_windows_centralus_basic/providers/Microsoft.Web/sites/WDPRJesse",
+    "appService.deploySubpath": "publish"
+}

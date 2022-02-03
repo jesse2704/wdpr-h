@@ -31,7 +31,7 @@ namespace wdpr_h.Controllers
 
         // GET: Moderator/Details/5
         [HttpGet]
-        public async Task<IActionResult> Details(string id)
+        public IActionResult Details(string id)
         {
             if (id == null)
             {

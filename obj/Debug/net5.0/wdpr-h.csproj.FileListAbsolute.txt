@@ -1227,7 +1227,6 @@ C:/Users/jesse/Documents/School/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeco
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/ref/wdpr-h.dll
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/wdpr-h.pdb
 /Users/jesseakoma/Documents/GitHub/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeconfig.cache
-/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/System.Windows.Forms.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/AspNetCoreHero.ToastNotification.Views.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/AspNetCoreHero.ToastNotification.dll
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
@@ -1245,3 +1244,53 @@ C:/Users/jesse/Documents/School/WDPR/wdpr-h/obj/Debug/net5.0/wdpr-h.genruntimeco
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Ortopedagoog.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Home/Klachtenprocedures.cshtml.g.cs
 /Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/obj/Debug/net5.0/Razor/Views/Hulpverlener/IndexClient.cshtml.g.cs
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/SendGrid.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/StarkbankEcdsa.dll
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/wdpr-h.deps 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/wdpr-h.runtimeconfig 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/wdpr-h.deps 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/wdpr-h.runtimeconfig 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/wdpr-h.deps 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/wdpr-h.runtimeconfig 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.deps 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.runtimeconfig 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/appsettings 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/appsettings 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.deps 3.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/wdpr-h.runtimeconfig 3.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/wdpr-h.deps 3.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/wdpr-h.deps 3.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/publish/web.config
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/appsettings 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/publish/wdpr-h.deps.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/publish/wdpr-h.runtimeconfig.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/wdpr-h.deps 2.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/publish/publish/wdpr-h.runtimeconfig 3.json
+/Users/jesseakoma/Documents/HHSJ2/WDPR/wdpr-h/bin/Debug/net5.0/publish/publish/publish/wdpr-h.deps 3.json

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using FluentEmail.Core;
 using FluentEmail.Razor;
 using FluentEmail.Smtp;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 using wdpr_h.Data;
 using wdpr_h.Models;
+using wdpr_h.Services;
 
 namespace wdpr_h.Controllers
 {
@@ -22,11 +25,14 @@ namespace wdpr_h.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IToastNotification _toastNotification;
 
-        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification)
+        private IMailService  _mailService;
+
+        public ClientController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IToastNotification toastNotification, IMailService mailService)
         {
             _context = context;
             _userManager = userManager;
             _toastNotification = toastNotification;
+            _mailService = mailService;
         }
 
         // GET: Client
@@ -102,7 +108,7 @@ namespace wdpr_h.Controllers
                     var hId = targetClient.HulpverlenerId.ToString();
                     
                     Hulpverlener hulpverlener = _context.Hulpverlener.Single(h => h.Id == hId);
-                    SendMail(hulpverlener.Naam, targetClient.Email, targetClient.Naam, tijdelijkWachtwoord, hulpverlener.Email);
+                    await _mailService.SendEmailAsync(targetClient.Email, "Wachtwoord om in te loggen", "<h1>U kunt nu inloggen!! </h1><br>" + tijdelijkWachtwoord);
                 }  
 
                 _toastNotification.AddSuccessToastMessage("Client " + client.Naam + " is aangemaakt!");
@@ -247,37 +253,6 @@ namespace wdpr_h.Controllers
             var getClientId = getClient.Id;
             ViewData["getChildAccountId"] = getClientId;
             return View("Create");
-        }
-
-        public async void SendMail(String senderName, String recieverMail, String recieverName, String randomWachtwoord, String senderMail)
-        {
-            var sender = new SmtpSender(() => new SmtpClient("localhost")
-            {
-                EnableSsl = false,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                Port = 25,
-                //DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
-                PickupDirectoryLocation = @"C:\Demos"
-            });
-
-            StringBuilder template = new();
-            template.AppendLine("Dear @Model.FirstName,");
-            template.AppendLine("Er is een account aangemaakt voor u");
-            template.AppendLine("Gebruikersnaam = @Model.Email");
-            template.AppendLine("Tijdelijke wachtwoord = @Model.Wachtwoord");
-            template.AppendLine("- Team ZMDH");
-
-            Email.DefaultSender = sender;
-            Email.DefaultRenderer = new RazorRenderer();
-
-            var email = await Email
-                .From("@Model.senderEmail")
-                .To("@Model.Email", "Sue")
-                .Subject("Uw account is aangemaakt!")
-                .UsingTemplate(template.ToString(), new { FirstName = recieverName, Email = recieverMail, randomWachtwoord = "null", senderEmail = senderMail })
-                //.Body("Thanks for buying our product.")
-                .SendAsync();
-                
         }
     }
 }

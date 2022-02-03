@@ -17,16 +17,16 @@
 <body>
 
     <form action="/Hulpverlener/IndexClient" method="get">
+        <input type="submit" value="Zoek!" class="btn btn-primary m-4">
+        <input type="text" id="Naam" name="zoek" placeholder="Zoek op Naam/Spec">
         <label for="Naam">Zoek op specialisme en naam:</label>
-        <input type="text" id="Naam" name="zoek">
         <input hidden type="text" name="sorteer" value='@ViewData["sorteer"]'>
-        <input type="submit" value="Zoek!">
     </form>
 
     <table class="table">
         <thead>
             <tr>
-                <th>
+                <th scope="col">
                     Naam
                     @if ((string)ViewData["sorteer"] == "naam_oplopend")
                     {
@@ -39,16 +39,15 @@
                         asp-route-sorteer="naam_oplopend">↑</a>
                     }
                 </th>
-                <th>
+                <th scope="col">
                     Achternaam
                 </th>
-                <th>
+                <th scope="col">
                     Specialisme
                 </th>
-                <th>
+                <th scope="col">
                     Email
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
