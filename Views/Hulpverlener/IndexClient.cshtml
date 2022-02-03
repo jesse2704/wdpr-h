@@ -17,14 +17,15 @@
 <body>
 
     <form action="/Hulpverlener/IndexClient" method="get">
-        <input type="submit" value="Zoek!" class="btn btn-primary m-4">
+    <div class="mb-3">
+         <input type="submit" value="Zoek!" class="btn btn-primary">
         <input type="text" id="Naam" name="zoek" placeholder="Zoek op Naam/Spec">
-        <label for="Naam">Zoek op specialisme en naam:</label>
         <input hidden type="text" name="sorteer" value='@ViewData["sorteer"]'>
+    </div>
     </form>
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="table-primary">
             <tr>
                 <th scope="col">
                     Naam
